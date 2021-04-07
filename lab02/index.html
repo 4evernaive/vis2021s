@@ -99,7 +99,18 @@
 
 		<script>
 		var csvData = null
+		var HttpClient = function() {
+    this.get = function(aUrl, aCallback) {
+        var anHttpRequest = new XMLHttpRequest();
+        anHttpRequest.onreadystatechange = function() { 
+            if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                aCallback(anHttpRequest.responseText);
+        }
 
+        anHttpRequest.open( "GET", aUrl, true );            
+        anHttpRequest.send( null );
+    }
+}
 		
 
 			window.addEventListener('load', function(){
@@ -122,13 +133,9 @@
                         treemapContainer.appendChild(node)
                     })
 				})
-				
-				d3.csv("https://raw.githubusercontent.com/4evernaive/vis2021s/master/lab02/109-oversea.csv", function(error, vCsvData) {
-        if (error) throw error;
-		csvData=vCsvData;
-		//console.log(csvData)
-		var parsedCSV = d3.csvFormat(csvData);
- 		console.log(parsedCSV)
+				var client = new HttpClient();
+client.get('https://cors-anywhere.herokuapp.com/https://data.weather.gov.hk/weatherAPI/hko_data/regional-weather/latest_1min_temperature_uc.csv', function(response) {
+    //console.log(response)
 		 if (treemapContainer.innerHTML.length) {
                             treemapContainer.innerHTML = ''
                         }
@@ -136,14 +143,16 @@
                         if (objectKeys.innerHTML.length) {
                             objectKeys.innerHTML = ''
 						}
-		 dataLoader(parsedCSV, function(){
-								console.log(parsedCSV)	
+		 dataLoader(response, function(){
+								//console.log(response)	
 								dataClassifier(objectKeys.value, function(data, layers){
 									node = getNode(data, layers, treemapContainer)
 									treemapContainer.innerHTML = node.innerHTML
 								}) 
 							})			
-    });
+});
+
+				
 	
 			// 	document.getElementById('dropfile').addEventListener('dragover',function(evt){
 			// 		evt.preventDefault()

@@ -6,11 +6,27 @@ function dataLoader(text,cb) {
     var uri = 'data:text/plain;base64,' + Base64.encode(text.replace(/;/g, ','))
     var dsv = d3.dsvFormat(",")
 
+
+   
+
     d3.csv(uri, function(rawData){
+       
+
         //做資料處理，csv中有些資料是字串，不是數字形式，要轉成數字
         csvData = rawData.map(function(d){
+             //console.log(rawData)
+             var parseDate = d3.timeParse("%d.%m.%Y %H:%M");
+            
+        rawData.forEach(function(d) {
+            //var format = d3.time.format("%d-%m-%y");
+            d["自動氣象站"] = d["自動氣象站"];
+            d["氣溫（攝氏）"] = d["氣溫（攝氏）"];
+            delete d["日期時間"]
+           
+          })
+        
             var t = {}
-
+            console.log(d)
             for (var k in d) {
                 
                 //把字串轉成number
