@@ -22,7 +22,6 @@ function dataLoader(text,cb) {
             d["自動氣象站"] = d["自動氣象站"];
             d["氣溫（攝氏）"] = d["氣溫（攝氏）"];
             delete d["日期時間"]
-           
           })
         
             var t = {}
