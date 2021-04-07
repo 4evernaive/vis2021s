@@ -64,8 +64,8 @@
 			}
 			
 			#treemap {
-				height: 95%;
-				width: 100%;
+				height:100%;
+				width: 88em;
 			}
 		</style>
 	</head>
@@ -80,9 +80,9 @@
 			<li><a href="http://blog.infographics.tw/2015/10/d3js-tutorial-treemap-and-budget/">D3.js 實戰 － 利用 Treemap Layout 將政府預算視覺化</a></li>
 		</ul>
 
-		<div id="dropfile" for="csvfile">
+		<!-- <div id="dropfile" for="csvfile">
 			CSV 資料扔過來! Drop your CSV here.
-		</div>
+		</div> -->
 		<div>
 			<select id="ObjectKeys">
 				<option value="selectValue">
@@ -98,7 +98,10 @@
 		</script>
 
 		<script>
-			var csvData = null
+		var csvData = null
+
+		
+
 			window.addEventListener('load', function(){
                 var treemapContainer = document.getElementById('treemap')
                 var objectKeys = document.getElementById("ObjectKeys")
@@ -119,42 +122,65 @@
                         treemapContainer.appendChild(node)
                     })
 				})
-
-				document.getElementById('dropfile').addEventListener('dragover',function(evt){
-					evt.preventDefault()
-				})
-
-				document.getElementById('dropfile').addEventListener('drop', function(evt){
-					evt.preventDefault()
-
-					var files = evt.dataTransfer.files
-
-					if (files.length) {
-                        if (treemapContainer.innerHTML.length) {
+				
+				d3.csv("https://raw.githubusercontent.com/4evernaive/vis2021s/master/lab02/109-oversea.csv", function(error, vCsvData) {
+        if (error) throw error;
+		csvData=vCsvData;
+		//console.log(csvData)
+		var parsedCSV = d3.csvFormat(csvData);
+ 		console.log(parsedCSV)
+		 if (treemapContainer.innerHTML.length) {
                             treemapContainer.innerHTML = ''
                         }
 
                         if (objectKeys.innerHTML.length) {
                             objectKeys.innerHTML = ''
 						}
-
-						var csvFile = files[0]
-
-						//讀取csv
-						var fr = new FileReader()
-
-                        fr.onload = function(){
-                            dataLoader(fr.result, function(){
+		 dataLoader(parsedCSV, function(){
+								console.log(parsedCSV)	
 								dataClassifier(objectKeys.value, function(data, layers){
 									node = getNode(data, layers, treemapContainer)
 									treemapContainer.innerHTML = node.innerHTML
 								}) 
-							})			                         
-                        }
+							})			
+    });
+	
+			// 	document.getElementById('dropfile').addEventListener('dragover',function(evt){
+			// 		evt.preventDefault()
+			// 	})
 
-						fr.readAsText(csvFile)
-					}
-				})
+			// 	document.getElementById('dropfile').addEventListener('drop', function(evt){
+			// 		evt.preventDefault()
+
+			// 		var files = evt.dataTransfer.files
+
+			// 		if (files.length) {
+            //             if (treemapContainer.innerHTML.length) {
+            //                 treemapContainer.innerHTML = ''
+            //             }
+
+            //             if (objectKeys.innerHTML.length) {
+            //                 objectKeys.innerHTML = ''
+			// 			}
+
+			// 			var csvFile = files[0]
+
+			// 			//讀取csv
+			// 			var fr = new FileReader()
+						
+            //             fr.onload = function(){
+            //                 dataLoader(fr.result, function(){
+			// 					console.log(fr.result)	
+			// 					dataClassifier(objectKeys.value, function(data, layers){
+			// 						node = getNode(data, layers, treemapContainer)
+			// 						treemapContainer.innerHTML = node.innerHTML
+			// 					}) 
+			// 				})			                         
+            //             }
+
+			// 			fr.readAsText(csvFile)
+			// 		}
+			// 	})
 			})
 		</script>
 
