@@ -40,11 +40,19 @@ function getNode(data, layer, container){
 
     //依照各個layer的內容給定指定顏色，例如，有6個部門就給6個不同的顏色
     var COLORS = [
-        '#B19D4C',
+        '#1ABC9C',
+        '#2ECC71',
+        '#3498DB',
+        '#9B59B6',
+        '#34495E',
+        '#16A085',
+        '#27AE60',
         '#BDB312',
         '#566AC2',
-        '#D8A348',
-        '#44CFEB',
+        '#2980B9',
+        '#2C3E50',
+        '#F1C40F',
+        '#E67E22',
         '#C54180',
         '#0ECB7E',
         '#FECC92',
@@ -53,15 +61,14 @@ function getNode(data, layer, container){
         '#B14710',
         '#7A6B87',
         '#3FC378',
-        '#165A03',
-        '#8E63B5',
-        '#87CDF2',
-        '#C008D6',
-        '#F07FE4',
-        '#80A22B',
-        '#88CABA',
-        '#98CF67',
-        '#F553DF'
+        '#E74C3C',
+        '#F39C12',
+        '#D35400',
+        '#C0932B',
+        '#783DBA',
+        '34F32A2',
+        'FE352A2'
+
     ]
     var color = d3.scaleOrdinal()
                     .domain(layer)

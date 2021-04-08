@@ -10,9 +10,11 @@ def lab02():
         hama={}
         for element in data['records']['location']:
             if element['parameter'][0]['parameterValue']=='臺北市':
-                hama['氣象觀測站']=(element['locationName']+" "+element['stationId'])
+                hama['氣象觀測站']=(element['locationName'])
                 hama['攝氏溫度']=element['weatherElement'][3]['elementValue']
-                hama['觀測時間']=element['time']['obsTime']
+                hama['相對濕度']=element['weatherElement'][4]['elementValue']
+                hama['風向']=element['weatherElement'][1]['elementValue']
+                hama['風速']=element['weatherElement'][2]['elementValue']
                 gg.append(hama)
                 hama={}
     df = pd.DataFrame(gg)
