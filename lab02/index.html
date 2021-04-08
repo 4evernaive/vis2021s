@@ -147,7 +147,7 @@
 				})
 			})
 			var client = new HttpClient();
-			client.get('https://cors-anywhere.herokuapp.com/https://data.weather.gov.hk/weatherAPI/hko_data/regional-weather/latest_1min_temperature_uc.csv', function (response) {
+			client.get('https://cors.bridged.cc/https://data.weather.gov.hk/weatherAPI/hko_data/regional-weather/latest_1min_temperature_uc.csv', function (response) {
 				//console.log(response)
 				if (treemapContainer.innerHTML.length) {
 					treemapContainer.innerHTML = ''
