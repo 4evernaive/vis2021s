@@ -1,35 +1,18 @@
 var title = "treemap";
-var date_data = null;
+
 
 function dataLoader(text,cb) {
 	//有些csv資料的seperator是使用分號，這邊統一使用逗號座分隔
     var uri = 'data:text/plain;base64,' + Base64.encode(text.replace(/;/g, ','))
     var dsv = d3.dsvFormat(",")
-    
-
-   
 
     d3.csv(uri, function(rawData){
-        date_data=rawData[0]["日期時間"]
-
         //做資料處理，csv中有些資料是字串，不是數字形式，要轉成數字
         csvData = rawData.map(function(d){
-             //console.log(rawData)
-             
-             
-             
-        rawData.forEach(function(d) {
-            //var format = d3.time.format("%d-%m-%y");
-            d["自動氣象站"] = d["自動氣象站"];
-            d["氣溫（攝氏）"] = d["氣溫（攝氏）"];
-            delete d["日期時間"]
-          })
-         
-          document.getElementById("name114514").innerHTML=date_data;
             var t = {}
-            console.log(d)
+           
             for (var k in d) {
-                
+                console.log(k)
                 //把字串轉成number
                 if(/[0-9]+/.test(d[k])){
                     t[k] = parseInt(d[k].replace(/(,|\s)+/g, ''))
@@ -57,7 +40,6 @@ function dataLoader(text,cb) {
 		
 		//獲取html中的下拉式選單
 		//只要使用者更改選單欄位，就會用不同的欄位做為分層
-        console.log(date_data);
         var objectKeys = document.getElementById("ObjectKeys")
 		for(var k in csvData[0]){
 			objectKeys.add(new Option(k, k))
@@ -98,7 +80,7 @@ function dataClassifier(key, callback) {
 	}
 	
 	//將原有數值對應到較小的區間
-	var mapping = makeMapping([20, 100])
+	var mapping = makeMapping([40,60])
 
     var d3json = {
         children: [],
