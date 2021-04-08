@@ -147,7 +147,7 @@
 				})
 			})
 			var client = new HttpClient();
-			client.get('https://api.allorigins.win/raw?url=https://data.weather.gov.hk/weatherAPI/hko_data/regional-weather/latest_1min_temperature_uc.csv', function (response) {
+			client.get('https://cors-anywhere.herokuapp.com/https://data.weather.gov.hk/weatherAPI/hko_data/regional-weather/latest_1min_temperature_uc.csv', function (response) {
 				//console.log(response)
 				if (treemapContainer.innerHTML.length) {
 					treemapContainer.innerHTML = ''
@@ -205,9 +205,9 @@
 			// 	})
 		})
 	</script>
-<script src="https://d3js.org/d3.v4.js?VERSION=023255550225"></script>
-<script src="dataLoader.js?VERSION=01155510221"></script>
-<script src="getNode.js?VERSION=11200555025"></script>
+<script src="https://d3js.org/d3.v4.js?VERSION=023222255550225"></script>
+<script src="dataLoader.js?VERSION=0115522510221"></script>
+<script src="getNode.js?VERSION=112005222255025"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 </body>
 
