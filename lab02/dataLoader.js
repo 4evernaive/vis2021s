@@ -30,6 +30,7 @@ function dataLoader(text,cb) {
                     t[k] = d[k]
                 }
             }
+            
             return t
         })
 
@@ -47,6 +48,18 @@ function dataLoader(text,cb) {
 	
 		cb()
     })
+}
+
+function isNumber(val){
+
+    var regPos = /^[0-9]+.?[0-9]*/; //判断是否是数字。
+  
+    if(regPos.test(val) ){
+        return true;
+    }else{
+        return false;
+    }
+
 }
 
 function dataClassifier(key, callback) {
@@ -80,7 +93,7 @@ function dataClassifier(key, callback) {
 	}
 	
 	//將原有數值對應到較小的區間
-	var mapping = makeMapping([20,100])
+	var mapping = makeMapping([20,70])
 
     var d3json = {
         children: [],
@@ -90,6 +103,7 @@ function dataClassifier(key, callback) {
 	var layer = []
 	//循環讀取所有的data
     csvData.forEach(function(d){
+        
 		//這邊讀取所有非分層的名稱，只要該名稱不是分層名字就加入子節點中
 		//比如你想用 類別 作為分層名稱，那就把除了類別的名稱加入子節點	
 		var list = []
@@ -109,14 +123,22 @@ function dataClassifier(key, callback) {
                 //代表每一個長方形的大小
 				//如果直接以節點本身的數值計算長方形大小，可能會因為不同節點的數值差異過大
 				//而導致有些長方形面積很大，有些很小，會有很多長方形湖在一起
-                return {
-                    name: k,
-                    size: mapping[d[k]],
-                    value: d[k]
+                if( mapping[d[k]]==undefined){
+                    return {
+                        name: k,
+                        size:35,
+                        value: d[k]
+                    } 
+                }else{
+                    return {
+                        name: k,
+                        size: mapping[d[k]],
+                        value: d[k]
+                    }
                 }
             })
         })
     })
-
+    console.log(d3json)
     callback(d3json, layer)
 }
