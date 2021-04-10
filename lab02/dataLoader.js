@@ -12,7 +12,7 @@ function dataLoader(text,cb) {
             var t = {}
            
             for (var k in d) {
-                console.log(k)
+                //console.log(k)
                 //把字串轉成number
                 if(/[0-9]+/.test(d[k])){
                     t[k] = parseInt(d[k].replace(/(,|\s)+/g, ''))
@@ -139,6 +139,6 @@ function dataClassifier(key, callback) {
             })
         })
     })
-    console.log(d3json)
+    //console.log(d3json)
     callback(d3json, layer)
 }
