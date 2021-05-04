@@ -4,8 +4,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>Lab 05</title>
-	<script src="https://d3js.org/d3.v3.min.js?version=0123456789" charset="utf-8"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js?version=144"></script>
+	<script src="https://d3js.org/d3.v3.min.js?version=012343333356789" charset="utf-8"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js?version=1333344"></script>
 	<style type="text/css">
 		@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
 		@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@500;700&family=New+Tegomin&display=swap');
@@ -21,12 +21,12 @@
 			background-color: #007AFF;
 			font-size: 1em;
 			font-family: 'Antonio', sans-serif;
+			transition: width 0.5s, transform 1s;
 		}
 
 		div:hover {
-			transition: width, height;
-	transition-duration: 1s;
-	width: 100px;
+			width: 100px;
+			transform: rotate(360deg) scale(1.2);
 			box-shadow: 0 0 1px 1px rgba(0, 0, 0, 1);
 		}
 
@@ -35,22 +35,24 @@
 			margin: 0 auto;
 			text-align: center;
 		}
+
 		.ml4 {
-  font-weight: 900;
-  font-size: 2em;
-  font-family: 'Antonio', sans-serif;
-  padding-top: 7%;
-}
-.ml4 .letters {
-  position: absolute;
-  margin: auto;
-  left: 0;
-  top: 0.3em;
-  right: 0;
-  opacity: 0; 
-}
+			font-weight: 900;
+			font-size: 2em;
+			font-family: 'Antonio', sans-serif;
+			padding-top: 7%;
+		}
+
+		.ml4 .letters {
+			position: absolute;
+			margin: auto;
+			left: 0;
+			top: 0.3em;
+			right: 0;
+			opacity: 0;
+		}
 	</style>
-	
+
 </head>
 
 <body>
@@ -58,62 +60,62 @@
 		<span class="letters letters-1">vis2021s</span>
 		<span class="letters letters-2">Lab 05</span>
 		<span class="letters letters-3">Homework!</span>
-	  </h1>
-	
+	</h1>
+
 </body>
 
 <script type="text/javascript" charset="utf-8">
-var ml4 = {};
-ml4.opacityIn = [0,1];
-ml4.scaleIn = [0.2, 1];
-ml4.scaleOut = 3;
-ml4.durationIn = 800;
-ml4.durationOut = 600;
-ml4.delay = 500;
+	var ml4 = {};
+	ml4.opacityIn = [0, 1];
+	ml4.scaleIn = [0.2, 1];
+	ml4.scaleOut = 3;
+	ml4.durationIn = 800;
+	ml4.durationOut = 600;
+	ml4.delay = 500;
 
-anime.timeline({loop: true})
-  .add({
-    targets: '.ml4 .letters-1',
-    opacity: ml4.opacityIn,
-    scale: ml4.scaleIn,
-    duration: ml4.durationIn
-  }).add({
-    targets: '.ml4 .letters-1',
-    opacity: 0,
-    scale: ml4.scaleOut,
-    duration: ml4.durationOut,
-    easing: "easeInExpo",
-    delay: ml4.delay
-  }).add({
-    targets: '.ml4 .letters-2',
-    opacity: ml4.opacityIn,
-    scale: ml4.scaleIn,
-    duration: ml4.durationIn
-  }).add({
-    targets: '.ml4 .letters-2',
-    opacity: 0,
-    scale: ml4.scaleOut,
-    duration: ml4.durationOut,
-    easing: "easeInExpo",
-    delay: ml4.delay
-  }).add({
-    targets: '.ml4 .letters-3',
-    opacity: ml4.opacityIn,
-    scale: ml4.scaleIn,
-    duration: ml4.durationIn
-  }).add({
-    targets: '.ml4 .letters-3',
-    opacity: 0,
-    scale: ml4.scaleOut,
-    duration: ml4.durationOut,
-    easing: "easeInExpo",
-    delay: ml4.delay
-  }).add({
-    targets: '.ml4',
-    opacity: 0,
-    duration: 500,
-    delay: 500
-  });
+	anime.timeline({ loop: true })
+		.add({
+			targets: '.ml4 .letters-1',
+			opacity: ml4.opacityIn,
+			scale: ml4.scaleIn,
+			duration: ml4.durationIn
+		}).add({
+			targets: '.ml4 .letters-1',
+			opacity: 0,
+			scale: ml4.scaleOut,
+			duration: ml4.durationOut,
+			easing: "easeInExpo",
+			delay: ml4.delay
+		}).add({
+			targets: '.ml4 .letters-2',
+			opacity: ml4.opacityIn,
+			scale: ml4.scaleIn,
+			duration: ml4.durationIn
+		}).add({
+			targets: '.ml4 .letters-2',
+			opacity: 0,
+			scale: ml4.scaleOut,
+			duration: ml4.durationOut,
+			easing: "easeInExpo",
+			delay: ml4.delay
+		}).add({
+			targets: '.ml4 .letters-3',
+			opacity: ml4.opacityIn,
+			scale: ml4.scaleIn,
+			duration: ml4.durationIn
+		}).add({
+			targets: '.ml4 .letters-3',
+			opacity: 0,
+			scale: ml4.scaleOut,
+			duration: ml4.durationOut,
+			easing: "easeInExpo",
+			delay: ml4.delay
+		}).add({
+			targets: '.ml4',
+			opacity: 0,
+			duration: 500,
+			delay: 500
+		});
 
 
 	d3.text("data.csv", function (data) {
@@ -129,13 +131,16 @@ anime.timeline({loop: true})
 			})
 			.attr("class", "bar")
 			.style("height", function (d) {
-				return 7 * d[1] + "px";
+				return 12 * d[1]+12 + "px";
 			})
 			.append("text")
 			.text(function (d) {
 				return d[1];
 			})
-			
+			.style("padding-top", function (d) {
+				return 7 * d[1] + "px";
+			})
+
 	});
 </script>
 
