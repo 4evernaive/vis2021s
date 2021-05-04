@@ -1,3 +1,5 @@
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script>
 d3.text("data.csv", function (data) {
     var parsedCSV = d3.csv.parseRows(data);
 
@@ -18,3 +20,4 @@ d3.text("data.csv", function (data) {
             return d[1];
         })
 });
+</script>
