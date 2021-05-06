@@ -4,30 +4,17 @@
 <head>
 	<meta charset="utf-8">
 	<title>Lab 05</title>
-	<script src="https://d3js.org/d3.v3.min.js?version=012343333356789" charset="utf-8"></script>
+	<script src="https://d3js.org/d3.v6.min.js?version=012343333356789" charset="utf-8"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js?version=1333344"></script>
 	<style type="text/css">
-		@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
-		@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@500;700&family=New+Tegomin&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=DotGothic16&display=swap');
 
 		div.bar {
-			border: 1px black solid;
 			padding: 7px;
-			margin: 5px 10px 10px 5px;
-			display: inline-block;
-			height: 75px;
-			width: 10px;
-			vertical-align: bottom;
-			background-color: #007AFF;
-			font-size: 1em;
-			font-family: 'Antonio', sans-serif;
-			transition: width 0.5s, transform 1s;
-		}
-
-		div:hover {
-			width: 100px;
-			transform: rotate(360deg) scale(1.2);
-			box-shadow: 0 0 1px 1px rgba(0, 0, 0, 1);
+			width: 80vw;
+			height: 35vw;
+			margin: auto;
 		}
 
 		body {
@@ -37,10 +24,9 @@
 		}
 
 		.ml4 {
-			font-weight: 900;
 			font-size: 2em;
-			font-family: 'Antonio', sans-serif;
-			padding-top: 7%;
+			font-family: 'DotGothic16', sans-serif;
+			padding-top: 2%;
 		}
 
 		.ml4 .letters {
@@ -57,11 +43,11 @@
 
 <body>
 	<h1 class="ml4">
-		<span class="letters letters-1">vis2021s</span>
-		<span class="letters letters-2">Lab 05</span>
-		<span class="letters letters-3">Homework!</span>
+		<span class="letters letters-1">資料可視化</span>
+		<span class="letters letters-2">Lab 05 作業</span>
+		<span class="letters letters-3">由 Chart.js 和 D3.js 強力驅動</span>
 	</h1>
-
+	<div class="bar"> <canvas id="myChart"></canvas></div>
 </body>
 
 <script type="text/javascript" charset="utf-8">
@@ -116,32 +102,57 @@
 			duration: 500,
 			delay: 500
 		});
+</script>
+<script>
+	d3.csv('https://raw.githubusercontent.com/4evernaive/vis2021s/master/lab05/data.csv')
+		.then(makeChart)
 
-
-	d3.text("data.csv", function (data) {
-		var parsedCSV = d3.csv.parseRows(data);
-
-		d3.select("body")
-			.selectAll("div")
-			.data(parsedCSV)
-			.enter()
-			.append("div")
-			.filter(function (d, i) {
-				return (i != 0);
-			})
-			.attr("class", "bar")
-			.style("height", function (d) {
-				return 12 * d[1]+12 + "px";
-			})
-			.append("text")
-			.text(function (d) {
-				return d[1];
-			})
-			.style("padding-top", function (d) {
-				return 7 * d[1] + "px";
-			})
-
-	});
+	function makeChart(configData) {
+		console.log(configData);
+		var groupBoundary = configData.map(function (d) { return d.組界 });
+		var frequency = configData.map(function (d) { return d.頻率 });
+		var ctx = document.getElementById('myChart').getContext('2d');
+		console.log(groupBoundary, frequency);
+		var chart = new Chart(ctx, {
+			type: 'bar',
+			data: {
+				labels: groupBoundary,
+				datasets: [
+					{
+						data: frequency,
+						backgroundColor: [
+							'rgba(255, 99, 132, 0.2)',
+							'rgba(255, 159, 64, 0.2)',
+							'rgba(255, 205, 86, 0.2)',
+							'rgba(75, 192, 192, 0.2)',
+							'rgba(54, 162, 235, 0.2)',
+							'rgba(153, 102, 255, 0.2)',
+							'rgba(201, 203, 207, 0.2)'
+						],
+						borderColor: [
+							'rgb(255, 99, 132)',
+							'rgb(255, 159, 64)',
+							'rgb(255, 205, 86)',
+							'rgb(75, 192, 192)',
+							'rgb(54, 162, 235)',
+							'rgb(153, 102, 255)',
+							'rgb(201, 203, 207)'
+						],
+						label: '頻率(每一秒振動幾次)',
+						borderWidth: 1
+					}
+				]
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				title: {
+      display: true,
+      text: 'chart'
+    }
+			}
+		})
+	};
 </script>
 
 </html>

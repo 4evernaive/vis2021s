@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="utf-8">
+    <title>Lab</title>
+    <script src="https://d3js.org/d3.v6.min.js" charset="utf-8"></script> <!-- v6.5.0 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+    <div id="title">Which tennis player was No.1 the longest?</div>
+    <div id="legend">
+      <div class="item female">Women</div>
+      <div class="item male">Men</div>
+    </div>
+    <div id="chart-wrapper">
+      <canvas id="chart"></canvas>
+    </div>
+    <div id="footer">
+      <div class="left" ><a href="https://createwithdata.com/chartjs-and-csv/" target="_blank">About</a></div>
+      <div class="right">Source: <a href="https://public.tableau.com/en-us/s/resources" target="_blank">Tableau</a> / Wikipedia</div>
+    </div>
+    </body>
+    <script>
+        function makeChart(configData) {
+          // configData is an array of objects where each object is something like:
+          // {
+          //   "Name": "Steffi Graf",
+          //   "Weeks": "377",
+          //   "Gender": "Female"
+          // }
+        
+          var groupBoundary = configData.map(function(d) {return parseInt(d.組界)});
+          var weeksData = configData.map(function(d) {return +parseInt(d.頻率)});
+        
+          var chart = new Chart('chart', {
+            type: 'bar',
+            options: {
+              maintainAspectRatio: false,
+              legend: {
+                display: false
+              },
+              scales: {
+                xAxes: [
+                  {
+                    scaleLabel: {
+                      display: true,
+                      labelString: 'Weeks at No.1',
+                      fontSize: 16
+                    }
+                  }
+                ]
+              }
+            },
+            data: {
+              labels: groupBoundary,
+              datasets: [
+                {
+                  data: weeksData,
+                }
+              ]
+            }
+          })
+        }
+        
+        // Request data using D3
+        d3.csv('https://raw.githubusercontent.com/4evernaive/vis2021s/master/lab05/data.csv')
+          .then(makeChart);
+</script>
+  </html>
+  
