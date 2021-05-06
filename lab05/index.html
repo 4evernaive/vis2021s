@@ -9,6 +9,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js?version=1333344"></script>
 	<style type="text/css">
 		@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=DotGothic16&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=DotGothic16&family=Montserrat&display=swap');
 
 		div.bar {
 			padding: 7px;
@@ -23,84 +24,86 @@
 			text-align: center;
 		}
 
-		.ml4 {
-			font-size: 2em;
-			font-family: 'DotGothic16', sans-serif;
-			padding-top: 2%;
+		.ml11 {
+			font-size: 1.5em;
 		}
 
-		.ml4 .letters {
-			position: absolute;
-			margin: auto;
-			left: 0;
-			top: 0.3em;
-			right: 0;
+		.ml11 .text-wrapper {
+			position: relative;
+			display: inline-block;
+			padding-top: 0.1em;
+			padding-right: 0.05em;
+			padding-bottom: 0.15em;
+		}
+
+		.ml11 .line {
 			opacity: 0;
+			position: absolute;
+			left: 0;
+			height: 100%;
+			width: 3px;
+			background-color:rgba(8, 64, 128, 0.7);
+			transform-origin: 0 50%;
+		}
+
+		.ml11 .line1 {
+			top: 0;
+			left: 0;
+		}
+
+		.ml11 .letter {
+			display: inline-block;
+			line-height: 1em;
 		}
 	</style>
 
 </head>
 
 <body>
-	<h1 class="ml4">
-		<span class="letters letters-1">資料可視化</span>
-		<span class="letters letters-2">Lab 05 作業</span>
-		<span class="letters letters-3">由 Chart.js 和 D3.js 強力驅動</span>
+	<h1 class="ml11">
+		<span class="text-wrapper">
+			<span class="line line1"></span>
+			<span class="letters" style="font-family: 'DotGothic16', sans-serif; color: rgba(8, 64, 128, 0.5);">使用 HTML Division 畫直方圖</span>
+		</span>
 	</h1>
 	<div class="bar"> <canvas id="myChart"></canvas></div>
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 </body>
 
 <script type="text/javascript" charset="utf-8">
-	var ml4 = {};
-	ml4.opacityIn = [0, 1];
-	ml4.scaleIn = [0.2, 1];
-	ml4.scaleOut = 3;
-	ml4.durationIn = 800;
-	ml4.durationOut = 600;
-	ml4.delay = 500;
+	// Wrap every letter in a span
+	var textWrapper = document.querySelector('.ml11 .letters');
+	textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
 
 	anime.timeline({ loop: true })
 		.add({
-			targets: '.ml4 .letters-1',
-			opacity: ml4.opacityIn,
-			scale: ml4.scaleIn,
-			duration: ml4.durationIn
+			targets: '.ml11 .line',
+			scaleY: [0, 1],
+			opacity: [0.5, 1],
+			easing: "easeOutExpo",
+			duration: 700
+		})
+		.add({
+			targets: '.ml11 .line',
+			translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
+			easing: "easeOutExpo",
+			duration: 700,
+			delay: 100
 		}).add({
-			targets: '.ml4 .letters-1',
+			targets: '.ml11 .letter',
+			opacity: [0, 1],
+			easing: "easeOutExpo",
+			duration: 600,
+			offset: '-=775',
+			delay: (el, i) => 34 * (i + 1)
+		}).add({
+			targets: '.ml11',
 			opacity: 0,
-			scale: ml4.scaleOut,
-			duration: ml4.durationOut,
-			easing: "easeInExpo",
-			delay: ml4.delay
-		}).add({
-			targets: '.ml4 .letters-2',
-			opacity: ml4.opacityIn,
-			scale: ml4.scaleIn,
-			duration: ml4.durationIn
-		}).add({
-			targets: '.ml4 .letters-2',
-			opacity: 0,
-			scale: ml4.scaleOut,
-			duration: ml4.durationOut,
-			easing: "easeInExpo",
-			delay: ml4.delay
-		}).add({
-			targets: '.ml4 .letters-3',
-			opacity: ml4.opacityIn,
-			scale: ml4.scaleIn,
-			duration: ml4.durationIn
-		}).add({
-			targets: '.ml4 .letters-3',
-			opacity: 0,
-			scale: ml4.scaleOut,
-			duration: ml4.durationOut,
-			easing: "easeInExpo",
-			delay: ml4.delay
-		}).add({
-			targets: '.ml4',
-			opacity: 0,
-			duration: 500,
-			delay: 500
+			duration: 1000,
+			easing: "easeOutExpo",
+			delay: 1000
 		});
 </script>
 <script>
@@ -113,6 +116,8 @@
 		var frequency = configData.map(function (d) { return d.頻率 });
 		var ctx = document.getElementById('myChart').getContext('2d');
 		console.log(groupBoundary, frequency);
+		Chart.defaults.font.family = 'Montserrat', 'sans-serif';
+		Chart.defaults.font.size = 20;
 		var chart = new Chart(ctx, {
 			type: 'bar',
 			data: {
@@ -138,7 +143,7 @@
 							'rgb(153, 102, 255)',
 							'rgb(201, 203, 207)'
 						],
-						label: '頻率(每一秒振動幾次)',
+						label: '頻率',
 						borderWidth: 1
 					}
 				]
@@ -146,10 +151,26 @@
 			options: {
 				responsive: true,
 				maintainAspectRatio: false,
-				title: {
-      display: true,
-      text: 'chart'
-    }
+				plugins: {
+					title: {
+						display: true,
+						text: 'data.csv'
+					}
+				},
+				scales: {
+					x: {
+						title: {
+							display: true,
+							text: '組界'
+						}
+					},
+					y: {
+						title: {
+							display: true,
+							text: '頻率'
+						}
+					}
+				}
 			}
 		})
 	};
