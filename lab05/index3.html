@@ -4,11 +4,18 @@
 <head>
 	<meta charset="utf-8">
 	<title>Lab 05</title>
+	<link rel="stylesheet" href="./dist/chartist.min.css">
 	<script src="https://d3js.org/d3.v6.min.js?version=012343333356789" charset="utf-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js">
 	</script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js?version=1333344"></script>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+	<script src="https://code.highcharts.com/modules/cylinder.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/export-data.js"></script>
+	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 	<style type="text/css">
 		@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=DotGothic16&display=swap');
 		@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=DotGothic16&family=Montserrat&display=swap');
@@ -70,12 +77,61 @@
 			display: inline-block;
 			line-height: 1em;
 		}
+
+		#container {
+			height: 50vw;
+			width: 80vw;
+			margin: auto;
+			font-family: 'Montserrat', sans-serif;
+		}
+
+		.highcharts-figure,
+		.highcharts-data-table table {
+			min-width: 30vw;
+			max-width: 80vw;
+			margin: auto;
+		}
+
+		.highcharts-data-table table {
+			font-family: Verdana, sans-serif;
+			border-collapse: collapse;
+			border: 1px solid #EBEBEB;
+			margin: 10px auto;
+			text-align: center;
+			width: 100%;
+			max-width: 500px;
+		}
+
+		.highcharts-data-table caption {
+			padding: 1em 0;
+			font-size: 1.2em;
+			color: #555;
+		}
+
+		.highcharts-data-table th {
+			font-weight: 600;
+			padding: 0.5em;
+		}
+
+		.highcharts-data-table td,
+		.highcharts-data-table th,
+		.highcharts-data-table caption {
+			padding: 0.5em;
+		}
+
+		.highcharts-data-table thead tr,
+		.highcharts-data-table tr:nth-child(even) {
+			background: #f8f8f8;
+		}
+
+		.highcharts-data-table tr:hover {
+			background: #f1f7ff;
+		}
 	</style>
 
 </head>
 
 <body>
-
 	<nav class="navbar is-link is-fixed-top" role="navigation" aria-label="main navigation">
 		<div id="navbarBasicExample" class="navbar-menu">
 			<div class="navbar-start ">
@@ -83,8 +139,7 @@
 					<h1 class="ml11">
 						<span class="text-wrapper">
 							<span class="line line1"></span>
-							<span class="letters"
-								style="font-family: 'Montserrat', sans-serif;">Lab05
+							<span class="letters" style="font-family: 'Montserrat', sans-serif;">Lab05
 								Using HTML Division to draw histograms</span>
 						</span>
 					</h1>
@@ -96,10 +151,9 @@
 					<div class="buttons" style="font-family: 'Montserrat', sans-serif; "> <a href="./index.html"
 							style="font-family: 'Montserrat', sans-serif; " class="button is-primary is-light"
 							id="listBtn1">Chart.js + D3.js</a>
-							<a href="./index1.html"
-							style="font-family: 'Montserrat', sans-serif; " class="button is-link is-light"
-							id="listBtn1">Highcharts + D3.js</a>
-							<a href="./index3.html" style="font-family: 'Montserrat', sans-serif; "
+						<a href="./index1.html" style="font-family: 'Montserrat', sans-serif; "
+							class="button is-link is-light" id="listBtn1">Highcharts + D3.js</a>
+						<a href="./index3.html" style="font-family: 'Montserrat', sans-serif; "
 							class="button  is-success is-light" id="listBtn1">CHARTIST.JS + D3.js</a>
 						<a class="button  is-warning is-light" style="font-family: 'Montserrat', sans-serif; "
 							href="./index2.html">Pure D3.js</a>
@@ -108,11 +162,10 @@
 			</div>
 	</nav>
 	<br><br><br>
+
 	<div class="columns">
 		<div class="column is-1"></div>
 		<div class="column is-10">
-		
-
 			<article class="message is-link">
 				<div class="message-header" style="font-family: 'Montserrat', sans-serif;">
 					<p>References</p>
@@ -125,7 +178,9 @@
 					Bulma https://bulma.io/documentation
 				</div>
 			</article>
-
+			<div class="sss">
+				<div class="ct-chart ct-perfect-fourth"></div>
+			</div>
 		</div>
 		<div class="column  is-1"></div>
 	</div>
@@ -167,106 +222,56 @@
 			delay: 1000
 		});
 </script>
-<script type="text/javascript">
-	var randomArray = [
-		'rgba(141, 211, 199, 0.4)',
-		'rgba(255, 100, 179, 0.4)',
-		'rgba(255, 100, 86, 0.4)',
-		'rgba(175, 192, 192, 0.4)',
-		'rgba(154, 162, 235, 0.4)',
-		'rgba(53, 12, 255, 0.4)',
-		'rgba(20, 203, 207, 0.4)'
-	]
-	var randomElement = _.sample(randomArray);
-	//var item = items[Math.floor(Math.random() * items.length)];
-	var margin = { top: 20, right: 20, bottom: 30, left: 40 },
-		width = window.innerWidth * 2 / 3,
-		height = window.innerHeight * 2 / 3,
-		fontSize = 15;
+<script src="./dist/chartist.min.js"></script>
+<script>
 
-	var svg = d3.select("body").append("svg")
-		.attr("width", width + margin.right + margin.left)
-		.attr("height", height + margin.top + margin.bottom)
-		.append("g")// used for x, y lengend
-		.attr("transform",
-			"translate(" + margin.left + "," + margin.top + ")");
 
-	var rowConverter = function (d) {
-		return {
-			Date: parseInt(d.組界),
-			Amount: parseInt(d.頻率)
+
+	d3.csv('https://raw.githubusercontent.com/4evernaive/vis2021s/master/lab05/data.csv')
+		.then(makeChart)
+
+	const image = new Image();
+	image.src = 'https://pngimg.com/uploads/pokemon/small/pokemon_PNG110.png';
+	const plugin = {
+		id: 'custom_canvas_background_image',
+		beforeDraw: (chart) => {
+			if (image.complete) {
+				const ctx = chart.ctx;
+				const { top, left, width, height } = chart.chartArea;
+				const x = left + width / 2 - image.width / 2;
+				const y = top + height / 2 - image.height / 2;
+				ctx.drawImage(image, x, y);
+			} else {
+				image.onload = () => chart.draw();
+			}
+		}
+	};
+	function makeChart(configData) {
+		//console.log(configData);
+		var groupBoundary = configData.map(function (d) { return d.組界 });
+		var frequency = configData.map(function (d) { return d.頻率 });
+		console.log(groupBoundary, frequency);
+		var data = {
+			labels: groupBoundary,
+			series: [
+			frequency
+			],
 		};
-	}
 
-	d3.csv("https://raw.githubusercontent.com/4evernaive/vis2021s/master/lab05/data.csv", rowConverter).then(function (data) {
-		data.forEach(function (d) {
-			d.Date = +d.Date;
-		});
-		// set the ranges
-		var x = d3.scaleBand()
-			.range([0, width])
-			.padding(0.2);
-		var y = d3.scaleLinear()
-			.range([height, 0]);
-
-		// Scale the range of the data in the domains
-		x.domain(data.map(function (d) { return d.Date; }));
-		y.domain([0, d3.max(data, function (d) { return d.Amount; })]);
-
-		svg.selectAll("rect")
-			.data(data)
-			.enter()
-			.append("rect")
-			.attr("class", "sss")
-			.attr("x", function (d) {
-				return x(d.Date)
-			})
-			.attr("y", function (d) {
-				return height
-			})
-			.attr("width", x.bandwidth())
-			.attr("height", 0);
-
-		svg.selectAll("text")
-			.data(data)
-			.enter()
-			.append("text")
-			.text(function (d) {
-				return d.Amount;
-			})
-			.attr("id", "amt")
-			.attr("x", function (d) {
-				return x(d.Date) + (x.bandwidth()) / 2 - fontSize / 2;
-			})
-			.attr("y", height - fontSize / 2)
-			.attr("style", "font-family: 'Montserrat', sans-serif; font-size: 10px")
-
-		svg.append("g")
-			.attr("id", "xaxis")
-			.attr("transform", "translate(0," + height + ")")
-			.attr("style", "font-family: 'Montserrat', sans-serif; font-size: 20px")
-			.call(d3.axisBottom(x));
-
-		// add the y Axis
-		svg.append("g")
-			.attr("id", "yaxis")
-			.attr("style", "font-family: 'Montserrat', sans-serif; font-size: 20px")
-			.call(d3.axisLeft(y));
-
-
-
-
-		svg.selectAll("rect")
-			.transition()
-			.duration(800)
-			.attr("y", function (d) { return y(d.Amount); })
-			.attr("height", function (d) { return height - y(d.Amount); })
-			.attr("fill", randomElement);
-
-
-		console.log(data);
-	});
-
+		var chart = new Chartist.Bar('.ct-chart', data,{axisY: {
+    onlyInteger: true
+  }});
+		chart.on('draw', function(context) {
+  // First we want to make sure that only do something when the draw event is for bars. Draw events do get fired for labels and grids too.
+  if(context.type === 'bar') {
+    // With the Chartist.Svg API we can easily set an attribute on our bar that just got drawn
+    context.element.attr({
+      // Now we set the style attribute on our bar to override the default color of the bar. By using a HSL colour we can easily set the hue of the colour dynamically while keeping the same saturation and lightness. From the context we can also get the current value of the bar. We use that value to calculate a hue between 0 and 100 degree. This will make our bars appear green when close to the maximum and red when close to zero.
+      style: 'stroke: hsla(' + Math.floor(Chartist.getMultiValue(context.value) /10  * 100) + ', 50%, 50%,0.6);'
+    });
+  }
+});
+	};
 </script>
 
 
