@@ -57,8 +57,7 @@
 			left: 0;
 			height: 100%;
 			width: 3px;
-			background-color: rgba(8, 64, 128, 0.7);
-			transform-origin: 0 50%;
+			transform-origin: 0 41%;
 		}
 
 		.ml11 .line1 {
@@ -75,45 +74,48 @@
 </head>
 
 <body>
+	<nav class="navbar is-link is-fixed-top" role="navigation" aria-label="main navigation">
+		<div id="navbarBasicExample" class="navbar-menu">
+			<div class="navbar-start ">
+				<div class="navbar-item">
+					<h1 class="ml11">
+						<span class="text-wrapper">
+							<span class="line line1"></span>
+							<span class="letters"
+								style="font-family: 'Montserrat', sans-serif;">Lab05
+								Using HTML Division to draw histograms</span>
+						</span>
+					</h1>
+				</div>
 
+			</div>
+			<div class="navbar-end">
+				<div class="navbar-item">
+					<div class="buttons" style="font-family: 'Montserrat', sans-serif; "> <a href="./index.html"
+							style="font-family: 'Montserrat', sans-serif; " class="button is-info"
+							id="listBtn1">Chart.js + D3.js</a>
+							<a href="./index1.html"
+							style="font-family: 'Montserrat', sans-serif; " class="button is-link is-light"
+							id="listBtn1">Highcharts + D3.js</a>
+						<a class="button  is-warning" style="font-family: 'Montserrat', sans-serif; "
+							href="./index2.html">Pure D3.js</a>
+					</div>
+				</div>
+			</div>
+	</nav>
+	<br><br><br>
 
 	<div class="columns">
 		<div class="column is-1"></div>
 		<div class="column is-10">
-			<nav class="navbar is-light" role="navigation" aria-label="main navigation">
-
-
-				<div id="navbarBasicExample" class="navbar-menu">
-					<div class="navbar-start ">
-						<div class="navbar-item">
-							<h1 class="ml11">
-								<span class="text-wrapper">
-									<span class="line line1"></span>
-									<span class="letters"
-										style="font-family: 'Montserrat', sans-serif; color: rgba(8, 64, 128, 0.5);">Lab05
-										Using HTML Division to draw histograms</span>
-								</span>
-							</h1>
-						</div>
-
-					</div>
-					<div class="navbar-end"><div class="navbar-item">
-						<div class="buttons" style="font-family: 'Montserrat', sans-serif; "> <a href="./index.html"
-							style="font-family: 'Montserrat', sans-serif; " class="button is-info"
-							id="listBtn1">Chart.js + D3.js</a>
-						<a class="button is-primary" style="font-family: 'Montserrat', sans-serif; "
-							href="./index2.html">Pure D3.js</a>
-					</div>
-				</div></div>
-			</nav>
-
 			<article class="message is-info">
 				<div class="message-header" style="font-family: 'Montserrat', sans-serif;">
 					<p>Reference</p>
 				</div>
 				<div class="message-body" style="text-align:left"> Chapter 06 Drawing with Data
 					https://myweb.ntut.edu.tw/~tjhsieh/c/vis/vis2021s/d3-book-2.0.3/chapter06/index.html<br>
-					Chart.js https://www.chartjs.org/docs/latest/ <br>
+					Chart.js https://www.chartjs.org/docs/latest/<br>
+					Highcharts https://www.highcharts.com/docs/index<br>
 					Bulma https://bulma.io/documentation/
 				</div>
 			</article>
