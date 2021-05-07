@@ -5,9 +5,58 @@
     <meta charset="utf-8">
     <title>Lab</title>
     <script src="https://d3js.org/d3.v6.min.js" charset="utf-8"></script> <!-- v6.5.0 -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
     <style type="text/css">
+body {
+  font-family: 'Roboto';
+  color: #333;
+  background-color: #F9F7EB;
+}
+
+#title {
+  font-family: 'Merriweather';
+  text-align: center;
+  padding: 30px;
+  font-size: 28px;
+  letter-spacing: -0.01em;
+  color: #333;
+}
+
+#legend {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 10px 10px;
+  font-size: 12px;
+}
+
+#legend .item {
+  line-height: 12px;
+  padding: 0 10px 0 4px;
+}
+
+#legend .item.male {
+  border-left: 12px solid #19A0AA;
+}
+
+#legend .item.female {
+  border-left: 12px solid #F15F36;
+}
+
+
+#chart-wrapper {
+  height: 1000px;
+}
+
+#footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 10px;
+  color: #aaa;
+  font-size: 12px;
+}
+
+#footer a {
+  color: #aaa;
+}
 
     </style>
 </head>
@@ -25,51 +74,6 @@
       <div class="right">Source: <a href="https://public.tableau.com/en-us/s/resources" target="_blank">Tableau</a> / Wikipedia</div>
     </div>
     </body>
-    <script>
-        function makeChart(configData) {
-          // configData is an array of objects where each object is something like:
-          // {
-          //   "Name": "Steffi Graf",
-          //   "Weeks": "377",
-          //   "Gender": "Female"
-          // }
-        
-          var groupBoundary = configData.map(function(d) {return parseInt(d.組界)});
-          var weeksData = configData.map(function(d) {return +parseInt(d.頻率)});
-        
-          var chart = new Chart('chart', {
-            type: 'bar',
-            options: {
-              maintainAspectRatio: false,
-              legend: {
-                display: false
-              },
-              scales: {
-                xAxes: [
-                  {
-                    scaleLabel: {
-                      display: true,
-                      labelString: 'Weeks at No.1',
-                      fontSize: 16
-                    }
-                  }
-                ]
-              }
-            },
-            data: {
-              labels: groupBoundary,
-              datasets: [
-                {
-                  data: weeksData,
-                }
-              ]
-            }
-          })
-        }
-        
-        // Request data using D3
-        d3.csv('https://raw.githubusercontent.com/4evernaive/vis2021s/master/lab05/data.csv')
-          .then(makeChart);
-</script>
+    <script></script>
   </html>
   

@@ -98,13 +98,13 @@
 
 					</div>
 					<div class="navbar-end"><div class="navbar-item">
-						<div class="buttons" style="font-family: 'Montserrat', sans-serif; "> <a href="./index.html"
-							style="font-family: 'Montserrat', sans-serif; " class="button is-info"
-							id="listBtn1">Chart.js + D3.js</a>
-						<a class="button is-primary" style="font-family: 'Montserrat', sans-serif; "
-							href="./index2.html">Pure D3.js</a>
-					</div>
-				</div></div>
+							<div class="buttons" style="font-family: 'Montserrat', sans-serif; "> <a href="./index.html"
+									style="font-family: 'Montserrat', sans-serif; " class="button is-info"
+									id="listBtn1">Chart.js + D3.js</a>
+								<a class="button is-primary" style="font-family: 'Montserrat', sans-serif; "
+									href="./index2.html">Pure D3.js</a>
+							</div>
+						</div></div>
 			</nav>
 
 			<article class="message is-info">
@@ -117,7 +117,7 @@
 					Bulma https://bulma.io/documentation/
 				</div>
 			</article>
-			<div class="sss"><canvas id="myChart"></canvas></div>
+
 		</div>
 		<div class="column  is-1"></div>
 	</div>
@@ -159,94 +159,106 @@
 			delay: 1000
 		});
 </script>
-<script>
+<script type="text/javascript">
+	var randomArray = [
+		'rgba(141, 211, 199, 0.4)',
+		'rgba(255, 100, 179, 0.4)',
+		'rgba(255, 100, 86, 0.4)',
+		'rgba(175, 192, 192, 0.4)',
+		'rgba(154, 162, 235, 0.4)',
+		'rgba(53, 12, 255, 0.4)',
+		'rgba(20, 203, 207, 0.4)'
+	]
+	var randomElement = _.sample(randomArray);
+	//var item = items[Math.floor(Math.random() * items.length)];
+	var margin = { top: 20, right: 20, bottom: 30, left: 40 },
+		width = window.innerWidth * 2 / 3,
+		height = window.innerHeight * 2 / 3,
+		fontSize = 15;
+
+	var svg = d3.select("body").append("svg")
+		.attr("width", width + margin.right + margin.left)
+		.attr("height", height + margin.top + margin.bottom)
+		.append("g")// used for x, y lengend
+		.attr("transform",
+			"translate(" + margin.left + "," + margin.top + ")");
+
+	var rowConverter = function (d) {
+		return {
+			Date: parseInt(d.組界),
+			Amount: parseInt(d.頻率)
+		};
+	}
+
+	d3.csv("https://raw.githubusercontent.com/4evernaive/vis2021s/master/lab05/data.csv", rowConverter).then(function (data) {
+		data.forEach(function (d) {
+			d.Date = +d.Date;
+		});
+		// set the ranges
+		var x = d3.scaleBand()
+			.range([0, width])
+			.padding(0.2);
+		var y = d3.scaleLinear()
+			.range([height, 0]);
+
+		// Scale the range of the data in the domains
+		x.domain(data.map(function (d) { return d.Date; }));
+		y.domain([0, d3.max(data, function (d) { return d.Amount; })]);
+
+		svg.selectAll("rect")
+			.data(data)
+			.enter()
+			.append("rect")
+			.attr("class", "sss")
+			.attr("x", function (d) {
+				return x(d.Date)
+			})
+			.attr("y", function (d) {
+				return height
+			})
+			.attr("width", x.bandwidth())
+			.attr("height", 0);
+
+		svg.selectAll("text")
+			.data(data)
+			.enter()
+			.append("text")
+			.text(function (d) {
+				return d.Amount;
+			})
+			.attr("id", "amt")
+			.attr("x", function (d) {
+				return x(d.Date) + (x.bandwidth()) / 2 - fontSize / 2;
+			})
+			.attr("y", height - fontSize / 2)
+			.attr("style", "font-family: 'Montserrat', sans-serif; font-size: 10px")
+
+		svg.append("g")
+			.attr("id", "xaxis")
+			.attr("transform", "translate(0," + height + ")")
+			.attr("style", "font-family: 'Montserrat', sans-serif; font-size: 20px")
+			.call(d3.axisBottom(x));
+
+		// add the y Axis
+		svg.append("g")
+			.attr("id", "yaxis")
+			.attr("style", "font-family: 'Montserrat', sans-serif; font-size: 20px")
+			.call(d3.axisLeft(y));
 
 
 
-	d3.csv('https://raw.githubusercontent.com/4evernaive/vis2021s/master/lab05/data.csv')
-		.then(makeChart)
 
-	const image = new Image();
-	image.src = 'https://pngimg.com/uploads/pokemon/small/pokemon_PNG110.png';
-	const plugin = {
-		id: 'custom_canvas_background_image',
-		beforeDraw: (chart) => {
-			if (image.complete) {
-				const ctx = chart.ctx;
-				const { top, left, width, height } = chart.chartArea;
-				const x = left + width / 2 - image.width / 2;
-				const y = top + height / 2 - image.height / 2;
-				ctx.drawImage(image, x, y);
-			} else {
-				image.onload = () => chart.draw();
-			}
-		}
-	};
-	function makeChart(configData) {
-		console.log(configData);
-		var groupBoundary = configData.map(function (d) { return d.組界 });
-		var frequency = configData.map(function (d) { return d.頻率 });
-		var ctx = document.getElementById('myChart').getContext('2d');
-		console.log(groupBoundary, frequency);
-		Chart.defaults.font.family = 'Montserrat', 'sans-serif';
-		Chart.defaults.font.size = 20;
-		var chart = new Chart(ctx, {
-			type: 'bar',
-			plugins: [plugin],
-			data: {
-				labels: groupBoundary,
-				datasets: [
-					{
-						data: frequency,
-						backgroundColor: [
-							'rgba(141, 211, 199, 0.4)',
-							'rgba(255, 100, 179, 0.4)',
-							'rgba(255, 100, 86, 0.4)',
-							'rgba(175, 192, 192, 0.4)',
-							'rgba(154, 162, 235, 0.4)',
-							'rgba(53, 12, 255, 0.4)',
-							'rgba(20, 203, 207, 0.4)'
-						],
-						borderColor: [
-							'rgb(141, 211, 199)',
-							'rgb(255, 100, 179)',
-							'rgb(255, 100, 86)',
-							'rgb(175, 192, 192)',
-							'rgb(154, 162, 235)',
-							'rgb(53, 12, 255)',
-							'rgb(20, 203, 207)'
-						],
-						label: '頻率',
-						borderWidth: 1
-					}
-				]
-			},
-			options: {
-				responsive: true,
-				maintainAspectRatio: false,
-				plugins: {
-					title: {
-						display: true,
-						text: 'LAB05 直方圖'
-					}
-				},
-				scales: {
-					x: {
-						title: {
-							display: true,
-							text: '組界'
-						}
-					},
-					y: {
-						title: {
-							display: true,
-							text: '頻率'
-						}
-					}
-				}
-			}
-		})
-	};
+		svg.selectAll("rect")
+			.transition()
+			.duration(800)
+			.attr("y", function (d) { return y(d.Amount); })
+			.attr("height", function (d) { return height - y(d.Amount); })
+			.attr("fill", randomElement);
+
+
+		console.log(data);
+	});
+
 </script>
 
 
