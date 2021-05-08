@@ -13,7 +13,7 @@
 		@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=DotGothic16&display=swap');
 		@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=DotGothic16&family=Montserrat&display=swap');
 		@import "https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css";
-
+		@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Noto+Sans+HK:wght@100&display=swap');
 		div.sss {
 			width: 80vw;
 			height: 30vw;
@@ -127,7 +127,14 @@
 		</div>
 		<div class="column  is-1"></div>
 	</div>
-
+	<footer class="footer">
+		<div class="content has-text-centered">
+		  <p>
+			vis2021s @
+			<a href="https://4evernaive.github.io/vis2021s/">4evernaive</a>
+		  </p>
+		</div>
+	  </footer>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 </body>
 
@@ -195,7 +202,7 @@
 		var ctx = document.getElementById('myChart').getContext('2d');
 		console.log(groupBoundary, frequency);
 		Chart.defaults.font.family = 'Montserrat', 'sans-serif';
-		Chart.defaults.font.size = 20;
+		Chart.defaults.font.size = 24;
 		var chart = new Chart(ctx, {
 			type: 'bar',
 			plugins: [plugin],

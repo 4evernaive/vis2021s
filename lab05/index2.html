@@ -125,11 +125,20 @@
 					Bulma https://bulma.io/documentation
 				</div>
 			</article>
-
+			<div class="sbb">
+				
+			</div>
 		</div>
 		<div class="column  is-1"></div>
 	</div>
-
+	<footer class="footer">
+		<div class="content has-text-centered">
+		  <p>
+			vis2021s @
+			<a href="https://4evernaive.github.io/vis2021s/">4evernaive</a>
+		  </p>
+		</div>
+	  </footer>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 </body>
 
@@ -178,13 +187,14 @@
 		'rgba(20, 203, 207, 0.4)'
 	]
 	var randomElement = _.sample(randomArray);
+	var rrr= randomElement.replace('0.4','1');
 	//var item = items[Math.floor(Math.random() * items.length)];
 	var margin = { top: 20, right: 20, bottom: 30, left: 40 },
 		width = window.innerWidth * 2 / 3,
 		height = window.innerHeight * 2 / 3,
 		fontSize = 15;
 
-	var svg = d3.select("body").append("svg")
+	var svg = d3.select("body").selectAll("div.sbb").append("svg")
 		.attr("width", width + margin.right + margin.left)
 		.attr("height", height + margin.top + margin.bottom)
 		.append("g")// used for x, y lengend
@@ -236,9 +246,9 @@
 			})
 			.attr("id", "amt")
 			.attr("x", function (d) {
-				return x(d.Date) + (x.bandwidth()) / 2 - fontSize / 2;
+				return x(d.Date) + (x.bandwidth()) / 2 - fontSize / 2 + 5;
 			})
-			.attr("y", height - fontSize / 2)
+			.attr("y", height - fontSize / 2+4)
 			.attr("style", "font-family: 'Montserrat', sans-serif; font-size: 10px")
 
 		svg.append("g")
@@ -261,9 +271,8 @@
 			.duration(800)
 			.attr("y", function (d) { return y(d.Amount); })
 			.attr("height", function (d) { return height - y(d.Amount); })
-			.attr("fill", randomElement);
-
-
+			.attr("fill", randomElement)
+			.attr("style", "outline: thin solid "+rrr+";");
 		console.log(data);
 	});
 
