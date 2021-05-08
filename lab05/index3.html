@@ -132,7 +132,7 @@
 </head>
 
 <body>
-	<nav class="navbar is-link is-fixed-top" role="navigation" aria-label="main navigation">
+	<nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
 		<div id="navbarBasicExample" class="navbar-menu">
 			<div class="navbar-start ">
 				<div class="navbar-item">
@@ -148,18 +148,7 @@
 			</div>
 			<div class="navbar-end">
 				<div class="navbar-item">
-					<div class="buttons" style="font-family: 'Montserrat', sans-serif; "> <a href="./index.html"
-						style="font-family: 'Montserrat', sans-serif; " class="button is-primary is-light"
-						id="listBtn1">Chart.js + D3.js</a>
-					<a href="./index1.html" style="font-family: 'Montserrat', sans-serif; "
-						class="button is-link is-light" id="listBtn1">Highcharts + D3.js</a>
-					<a href="./index3.html" style="font-family: 'Montserrat', sans-serif; "
-						class="button  is-success is-light" id="listBtn1">CHARTIST.JS + D3.js</a>
-					<a class="button  is-success is-light" style="font-family: 'Montserrat', sans-serif; "
-						href="./index4.html">amCharts</a>
-					<a class="button  is-warning is-light" style="font-family: 'Montserrat', sans-serif; "
-						href="./index2.html">D3.js ONLY</a>
-				</div>
+
 				</div>
 			</div>
 	</nav>
@@ -168,7 +157,7 @@
 	<div class="columns">
 		<div class="column is-1"></div>
 		<div class="column is-10">
-			<article class="message is-link">
+			<article class="message is-dark">
 				<div class="message-header" style="font-family: 'Montserrat', sans-serif;">
 					<p>References</p>
 				</div>
@@ -182,19 +171,32 @@
 				</div>
 			</article>
 			<div class="sss">
+				<div class="buttons" style="font-family: 'Montserrat', sans-serif; "> <a href="./index.html"
+						style="font-family: 'Montserrat', sans-serif; " class="button is-primary is-light"
+						id="listBtn1">Chart.js + D3.js</a>
+					<a href="./index1.html" style="font-family: 'Montserrat', sans-serif; "
+						class="button is-link is-light" id="listBtn1">Highcharts + D3.js</a>
+					<a href="./index3.html" style="font-family: 'Montserrat', sans-serif; "
+						class="button  is-success is-light" id="listBtn1">CHARTIST.JS + D3.js</a>
+					<a class="button  is-success is-light" style="font-family: 'Montserrat', sans-serif; "
+						href="./index4.html">amCharts</a>
+					<a class="button  is-warning is-light" style="font-family: 'Montserrat', sans-serif; "
+						href="./index2.html">D3.js ONLY</a>
+				</div>
 				<div class="ct-chart ct-perfect-fourth"></div>
 			</div>
 		</div>
 		<div class="column  is-1"></div>
 	</div>
+	<br><br><br>
 	<footer class="footer">
 		<div class="content has-text-centered">
-		  <p>
-			vis2021s @
-			<a href="https://4evernaive.github.io/vis2021s/">4evernaive</a>
-		  </p>
+			<p>
+				vis2021s @
+				<a href="https://4evernaive.github.io/vis2021s/">4evernaive</a>
+			</p>
 		</div>
-	  </footer>
+	</footer>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 </body>
 
@@ -264,23 +266,25 @@
 		var data = {
 			labels: groupBoundary,
 			series: [
-			frequency
+				frequency
 			],
 		};
 
-		var chart = new Chartist.Bar('.ct-chart', data,{axisY: {
-    onlyInteger: true
-  }});
-		chart.on('draw', function(context) {
-  // First we want to make sure that only do something when the draw event is for bars. Draw events do get fired for labels and grids too.
-  if(context.type === 'bar') {
-    // With the Chartist.Svg API we can easily set an attribute on our bar that just got drawn
-    context.element.attr({
-      // Now we set the style attribute on our bar to override the default color of the bar. By using a HSL colour we can easily set the hue of the colour dynamically while keeping the same saturation and lightness. From the context we can also get the current value of the bar. We use that value to calculate a hue between 0 and 100 degree. This will make our bars appear green when close to the maximum and red when close to zero.
-      style: 'stroke: hsla(' + Math.floor(Chartist.getMultiValue(context.value) /10  * 100) + ', 50%, 50%,0.6);'
-    });
-  }
-});
+		var chart = new Chartist.Bar('.ct-chart', data, {
+			axisY: {
+				onlyInteger: true
+			}
+		});
+		chart.on('draw', function (context) {
+			// First we want to make sure that only do something when the draw event is for bars. Draw events do get fired for labels and grids too.
+			if (context.type === 'bar') {
+				// With the Chartist.Svg API we can easily set an attribute on our bar that just got drawn
+				context.element.attr({
+					// Now we set the style attribute on our bar to override the default color of the bar. By using a HSL colour we can easily set the hue of the colour dynamically while keeping the same saturation and lightness. From the context we can also get the current value of the bar. We use that value to calculate a hue between 0 and 100 degree. This will make our bars appear green when close to the maximum and red when close to zero.
+					style: 'stroke: hsla(' + Math.floor(Chartist.getMultiValue(context.value) / 10 * 100) + ', 50%, 50%,0.6);'
+				});
+			}
+		});
 	};
 </script>
 

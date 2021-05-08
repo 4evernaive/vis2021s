@@ -20,6 +20,7 @@
 		@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=DotGothic16&family=Montserrat&display=swap');
 		@import "https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css";
 		@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Noto+Sans+HK:wght@100&display=swap');
+
 		div.sss {
 			width: 80vw;
 			height: 30vw;
@@ -131,15 +132,14 @@
 </head>
 
 <body>
-	<nav class="navbar is-link is-fixed-top" role="navigation" aria-label="main navigation">
+	<nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
 		<div id="navbarBasicExample" class="navbar-menu">
 			<div class="navbar-start ">
 				<div class="navbar-item">
 					<h1 class="ml11">
 						<span class="text-wrapper">
 							<span class="line line1"></span>
-							<span class="letters"
-								style="font-family: 'Montserrat', sans-serif;">Lab05
+							<span class="letters" style="font-family: 'Montserrat', sans-serif;">Lab05
 								Using HTML Division to draw histograms</span>
 						</span>
 					</h1>
@@ -148,27 +148,16 @@
 			</div>
 			<div class="navbar-end">
 				<div class="navbar-item">
-					<div class="buttons" style="font-family: 'Montserrat', sans-serif; "> <a href="./index.html"
-						style="font-family: 'Montserrat', sans-serif; " class="button is-primary is-light"
-						id="listBtn1">Chart.js + D3.js</a>
-					<a href="./index1.html" style="font-family: 'Montserrat', sans-serif; "
-						class="button is-link is-light" id="listBtn1">Highcharts + D3.js</a>
-					<a href="./index3.html" style="font-family: 'Montserrat', sans-serif; "
-						class="button  is-success is-light" id="listBtn1">CHARTIST.JS + D3.js</a>
-					<a class="button  is-success is-light" style="font-family: 'Montserrat', sans-serif; "
-						href="./index4.html">amCharts</a>
-					<a class="button  is-warning is-light" style="font-family: 'Montserrat', sans-serif; "
-						href="./index2.html">D3.js ONLY</a>
-				</div>
+
 				</div>
 			</div>
 	</nav>
 	<br><br><br>
-
 	<div class="columns">
 		<div class="column is-1"></div>
 		<div class="column is-10">
-			<article class="message is-link">
+
+			<article class="message is-dark">
 				<div class="message-header" style="font-family: 'Montserrat', sans-serif;">
 					<p>References</p>
 				</div>
@@ -181,18 +170,32 @@
 					Bulma https://bulma.io/documentation
 				</div>
 			</article>
-			<div class="sss"><canvas id="myChart"></canvas></div>
+			<div class="sss">
+				<div class="buttons" style="font-family: 'Montserrat', sans-serif; "> <a href="./index.html"
+						style="font-family: 'Montserrat', sans-serif; " class="button is-primary is-light"
+						id="listBtn1">Chart.js + D3.js</a>
+					<a href="./index1.html" style="font-family: 'Montserrat', sans-serif; "
+						class="button is-link is-light" id="listBtn1">Highcharts + D3.js</a>
+					<a href="./index3.html" style="font-family: 'Montserrat', sans-serif; "
+						class="button  is-success is-light" id="listBtn1">CHARTIST.JS + D3.js</a>
+					<a class="button  is-success is-light" style="font-family: 'Montserrat', sans-serif; "
+						href="./index4.html">amCharts</a>
+					<a class="button  is-warning is-light" style="font-family: 'Montserrat', sans-serif; "
+						href="./index2.html">D3.js ONLY</a>
+				</div><canvas id="myChart"></canvas>
+			</div>
 		</div>
 		<div class="column  is-1"></div>
 	</div>
+	<br><br><br>
 	<footer class="footer">
 		<div class="content has-text-centered">
-		  <p>
-			vis2021s @
-			<a href="https://4evernaive.github.io/vis2021s/">4evernaive</a>
-		  </p>
+			<p>
+				vis2021s @
+				<a href="https://4evernaive.github.io/vis2021s/">4evernaive</a>
+			</p>
 		</div>
-	  </footer>
+	</footer>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 </body>
 

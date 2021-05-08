@@ -76,15 +76,14 @@
 
 <body>
 
-	<nav class="navbar is-link is-fixed-top" role="navigation" aria-label="main navigation">
+	<nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
 		<div id="navbarBasicExample" class="navbar-menu">
 			<div class="navbar-start ">
 				<div class="navbar-item">
 					<h1 class="ml11">
 						<span class="text-wrapper">
 							<span class="line line1"></span>
-							<span class="letters"
-								style="font-family: 'Montserrat', sans-serif;">Lab05
+							<span class="letters" style="font-family: 'Montserrat', sans-serif;">Lab05
 								Using HTML Division to draw histograms</span>
 						</span>
 					</h1>
@@ -93,18 +92,7 @@
 			</div>
 			<div class="navbar-end">
 				<div class="navbar-item">
-					<div class="buttons" style="font-family: 'Montserrat', sans-serif; "> <a href="./index.html"
-						style="font-family: 'Montserrat', sans-serif; " class="button is-primary is-light"
-						id="listBtn1">Chart.js + D3.js</a>
-					<a href="./index1.html" style="font-family: 'Montserrat', sans-serif; "
-						class="button is-link is-light" id="listBtn1">Highcharts + D3.js</a>
-					<a href="./index3.html" style="font-family: 'Montserrat', sans-serif; "
-						class="button  is-success is-light" id="listBtn1">CHARTIST.JS + D3.js</a>
-					<a class="button  is-success is-light" style="font-family: 'Montserrat', sans-serif; "
-						href="./index4.html">amCharts</a>
-					<a class="button  is-warning is-light" style="font-family: 'Montserrat', sans-serif; "
-						href="./index2.html">D3.js ONLY</a>
-				</div>
+
 				</div>
 			</div>
 	</nav>
@@ -112,9 +100,9 @@
 	<div class="columns">
 		<div class="column is-1"></div>
 		<div class="column is-10">
-		
 
-			<article class="message is-link">
+
+			<article class="message is-dark">
 				<div class="message-header" style="font-family: 'Montserrat', sans-serif;">
 					<p>References</p>
 				</div>
@@ -128,19 +116,31 @@
 				</div>
 			</article>
 			<div class="sbb">
-				
+				<div class="buttons" style="font-family: 'Montserrat', sans-serif; "> <a href="./index.html"
+						style="font-family: 'Montserrat', sans-serif; " class="button is-primary is-light"
+						id="listBtn1">Chart.js + D3.js</a>
+					<a href="./index1.html" style="font-family: 'Montserrat', sans-serif; "
+						class="button is-link is-light" id="listBtn1">Highcharts + D3.js</a>
+					<a href="./index3.html" style="font-family: 'Montserrat', sans-serif; "
+						class="button  is-success is-light" id="listBtn1">CHARTIST.JS + D3.js</a>
+					<a class="button  is-success is-light" style="font-family: 'Montserrat', sans-serif; "
+						href="./index4.html">amCharts</a>
+					<a class="button  is-warning is-light" style="font-family: 'Montserrat', sans-serif; "
+						href="./index2.html">D3.js ONLY</a>
+				</div>
 			</div>
 		</div>
 		<div class="column  is-1"></div>
 	</div>
+	<br><br><br>
 	<footer class="footer">
 		<div class="content has-text-centered">
-		  <p>
-			vis2021s @
-			<a href="https://4evernaive.github.io/vis2021s/">4evernaive</a>
-		  </p>
+			<p>
+				vis2021s @
+				<a href="https://4evernaive.github.io/vis2021s/">4evernaive</a>
+			</p>
 		</div>
-	  </footer>
+	</footer>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 </body>
 
@@ -189,7 +189,7 @@
 		'rgba(20, 203, 207, 0.4)'
 	]
 	var randomElement = _.sample(randomArray);
-	var rrr= randomElement.replace('0.4','1');
+	var rrr = randomElement.replace('0.4', '1');
 	//var item = items[Math.floor(Math.random() * items.length)];
 	var margin = { top: 20, right: 20, bottom: 30, left: 40 },
 		width = window.innerWidth * 2 / 3,
@@ -250,7 +250,7 @@
 			.attr("x", function (d) {
 				return x(d.Date) + (x.bandwidth()) / 2 - fontSize / 2 + 5;
 			})
-			.attr("y", height - fontSize / 2+4)
+			.attr("y", height - fontSize / 2 + 4)
 			.attr("style", "font-family: 'Montserrat', sans-serif; font-size: 10px")
 
 		svg.append("g")
@@ -274,7 +274,7 @@
 			.attr("y", function (d) { return y(d.Amount); })
 			.attr("height", function (d) { return height - y(d.Amount); })
 			.attr("fill", randomElement)
-			.attr("style", "outline: thin solid "+rrr+";");
+			.attr("style", "outline: thin solid " + rrr + ";");
 		console.log(data);
 	});
 

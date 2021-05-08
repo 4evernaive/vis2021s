@@ -9,9 +9,9 @@
 	</script>
 	<!-- Resources -->
 	<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
-<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
-<script src="https://cdn.amcharts.com/lib/4/plugins/rangeSelector.js"></script>
-<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+	<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+	<script src="https://cdn.amcharts.com/lib/4/plugins/rangeSelector.js"></script>
+	<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js?version=1333344"></script>
 	<script src="https://code.highcharts.com/highcharts.js"></script>
 	<script src="https://code.highcharts.com/highcharts-3d.js"></script>
@@ -33,14 +33,15 @@
 		}
 
 		#chartdiv {
-  width: 100%;
-  height: 500px;
-  max-width: 100%;
-}
+			width: 100%;
+			height: 500px;
+			max-width: 100%;
+		}
+
 		#controls {
-  overflow: hidden;
-  padding-bottom: 3px;
-}
+			overflow: hidden;
+			padding-bottom: 3px;
+		}
 
 		div.bar {
 			border: 1px black solid;
@@ -147,7 +148,7 @@
 </head>
 
 <body>
-	<nav class="navbar is-link is-fixed-top" role="navigation" aria-label="main navigation">
+	<nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
 		<div id="navbarBasicExample" class="navbar-menu">
 			<div class="navbar-start ">
 				<div class="navbar-item">
@@ -163,18 +164,7 @@
 			</div>
 			<div class="navbar-end">
 				<div class="navbar-item">
-					<div class="buttons" style="font-family: 'Montserrat', sans-serif; "> <a href="./index.html"
-							style="font-family: 'Montserrat', sans-serif; " class="button is-primary is-light"
-							id="listBtn1">Chart.js + D3.js</a>
-						<a href="./index1.html" style="font-family: 'Montserrat', sans-serif; "
-							class="button is-link is-light" id="listBtn1">Highcharts + D3.js</a>
-						<a href="./index3.html" style="font-family: 'Montserrat', sans-serif; "
-							class="button  is-success is-light" id="listBtn1">CHARTIST.JS + D3.js</a>
-						<a class="button  is-success is-light" style="font-family: 'Montserrat', sans-serif; "
-							href="./index4.html">amCharts</a>
-						<a class="button  is-warning is-light" style="font-family: 'Montserrat', sans-serif; "
-							href="./index2.html">D3.js ONLY</a>
-					</div>
+
 				</div>
 			</div>
 	</nav>
@@ -183,7 +173,7 @@
 	<div class="columns">
 		<div class="column is-1"></div>
 		<div class="column is-10">
-			<article class="message is-link">
+			<article class="message is-dark">
 				<div class="message-header" style="font-family: 'Montserrat', sans-serif;">
 					<p>References</p>
 				</div>
@@ -196,11 +186,26 @@
 					Bulma https://bulma.io/documentation
 				</div>
 			</article>
-			<div class="sss"> <div id="controls"></div>
-			<div id="chartdiv"></div> </div>
+			<div class="sss">
+				<div class="buttons" style="font-family: 'Montserrat', sans-serif; "> <a href="./index.html"
+						style="font-family: 'Montserrat', sans-serif; " class="button is-primary is-light"
+						id="listBtn1">Chart.js + D3.js</a>
+					<a href="./index1.html" style="font-family: 'Montserrat', sans-serif; "
+						class="button is-link is-light" id="listBtn1">Highcharts + D3.js</a>
+					<a href="./index3.html" style="font-family: 'Montserrat', sans-serif; "
+						class="button  is-success is-light" id="listBtn1">CHARTIST.JS + D3.js</a>
+					<a class="button  is-success is-light" style="font-family: 'Montserrat', sans-serif; "
+						href="./index4.html">amCharts</a>
+					<a class="button  is-warning is-light" style="font-family: 'Montserrat', sans-serif; "
+						href="./index2.html">D3.js ONLY</a>
+				</div>
+				<div id="controls"></div>
+				<div id="chartdiv"></div>
+			</div>
 		</div>
 		<div class="column  is-1"></div>
 	</div>
+	<br><br><br>
 	<footer class="footer">
 		<div class="content has-text-centered">
 			<p>
@@ -247,68 +252,68 @@
 		});
 </script>
 <script>
-	am4core.ready(function() {
-	
-	// Themes begin
-	am4core.useTheme(am4themes_animated);
-	// Themes end
-	
-	// Create chart instance
-	var chart = am4core.create("chartdiv", am4charts.XYChart);
-	chart.scrollbarX = new am4core.Scrollbar();
-	
-	
-	// Load external data
-	chart.dataSource.url = "https://raw.githubusercontent.com/4evernaive/vis2021s/master/lab05/data.csv";
-	chart.dataSource.parser = new am4core.CSVParser();
-	chart.dataSource.parser.options.useColumnNames = true;
-	chart.dataSource.parser.options.reverse = false;
-	
-	// the following line makes value axes to be arranged vertically.
-	chart.leftAxesContainer.layout = "vertical";
+	am4core.ready(function () {
 
-	// Create axes
-	var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-	categoryAxis.dataFields.category = "組界";
-	categoryAxis.renderer.grid.template.location = 0;
-	categoryAxis.renderer.minGridDistance = 30;
-	categoryAxis.renderer.labels.template.horizontalCenter = "right";
-	categoryAxis.renderer.labels.template.verticalCenter = "middle";
-	categoryAxis.renderer.labels.template.rotation = 270;
-	categoryAxis.tooltip.disabled = true;
-	categoryAxis.renderer.minHeight = 110;
-	
-	var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-	valueAxis.renderer.minWidth = 50;
-	
-	// Create series
-	var series = chart.series.push(new am4charts.ColumnSeries());
-	series.sequencedInterpolation = true;
-	series.dataFields.valueY = "頻率";
-	series.dataFields.categoryX = "組界";
-	series.tooltipText = "[{categoryX}: bold]{valueY}[/]";
-	series.columns.template.strokeWidth = 0;
-	
-	series.tooltip.pointerOrientation = "vertical";
-	
-	series.columns.template.column.cornerRadiusTopLeft = 10;
-	series.columns.template.column.cornerRadiusTopRight = 10;
-	series.columns.template.column.fillOpacity = 0.8;
-	
-	// on hover, make corner radiuses bigger
-	var hoverState = series.columns.template.column.states.create("hover");
-	hoverState.properties.cornerRadiusTopLeft = 0;
-	hoverState.properties.cornerRadiusTopRight = 0;
-	hoverState.properties.fillOpacity = 1;
-	
-	series.columns.template.adapter.add("fill", function(fill, target) {
-	  return chart.colors.getIndex(target.dataItem.index);
-	});
-	
-	// Cursor
-	chart.cursor = new am4charts.XYCursor();
-	
+		// Themes begin
+		am4core.useTheme(am4themes_animated);
+		// Themes end
+
+		// Create chart instance
+		var chart = am4core.create("chartdiv", am4charts.XYChart);
+		chart.scrollbarX = new am4core.Scrollbar();
+
+
+		// Load external data
+		chart.dataSource.url = "https://raw.githubusercontent.com/4evernaive/vis2021s/master/lab05/data.csv";
+		chart.dataSource.parser = new am4core.CSVParser();
+		chart.dataSource.parser.options.useColumnNames = true;
+		chart.dataSource.parser.options.reverse = false;
+
+		// the following line makes value axes to be arranged vertically.
+		chart.leftAxesContainer.layout = "vertical";
+
+		// Create axes
+		var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+		categoryAxis.dataFields.category = "組界";
+		categoryAxis.renderer.grid.template.location = 0;
+		categoryAxis.renderer.minGridDistance = 30;
+		categoryAxis.renderer.labels.template.horizontalCenter = "right";
+		categoryAxis.renderer.labels.template.verticalCenter = "middle";
+		categoryAxis.renderer.labels.template.rotation = 270;
+		categoryAxis.tooltip.disabled = true;
+		categoryAxis.renderer.minHeight = 110;
+
+		var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+		valueAxis.renderer.minWidth = 50;
+
+		// Create series
+		var series = chart.series.push(new am4charts.ColumnSeries());
+		series.sequencedInterpolation = true;
+		series.dataFields.valueY = "頻率";
+		series.dataFields.categoryX = "組界";
+		series.tooltipText = "[{categoryX}: bold]{valueY}[/]";
+		series.columns.template.strokeWidth = 0;
+
+		series.tooltip.pointerOrientation = "vertical";
+
+		series.columns.template.column.cornerRadiusTopLeft = 10;
+		series.columns.template.column.cornerRadiusTopRight = 10;
+		series.columns.template.column.fillOpacity = 0.8;
+
+		// on hover, make corner radiuses bigger
+		var hoverState = series.columns.template.column.states.create("hover");
+		hoverState.properties.cornerRadiusTopLeft = 0;
+		hoverState.properties.cornerRadiusTopRight = 0;
+		hoverState.properties.fillOpacity = 1;
+
+		series.columns.template.adapter.add("fill", function (fill, target) {
+			return chart.colors.getIndex(target.dataItem.index);
+		});
+
+		// Cursor
+		chart.cursor = new am4charts.XYCursor();
+
 	}); // end am4core.ready()
-	</script>
+</script>
 
 </html>
