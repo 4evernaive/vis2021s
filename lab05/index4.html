@@ -4,27 +4,43 @@
 <head>
 	<meta charset="utf-8">
 	<title>Lab 05</title>
-	<script src="https://d3js.org/d3.v6.min.js?version=012343333356789" charset="utf-8"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js">
 	</script>
+	<!-- Resources -->
+	<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/plugins/rangeSelector.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js?version=1333344"></script>
 	<script src="https://code.highcharts.com/highcharts.js"></script>
 	<script src="https://code.highcharts.com/highcharts-3d.js"></script>
 	<script src="https://code.highcharts.com/modules/cylinder.js"></script>
 	<script src="https://code.highcharts.com/modules/exporting.js"></script>
 	<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
 	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 	<style type="text/css">
 		@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=DotGothic16&display=swap');
 		@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=DotGothic16&family=Montserrat&display=swap');
 		@import "https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css";
 		@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Noto+Sans+HK:wght@100&display=swap');
+
 		div.sss {
 			width: 80vw;
 			height: 30vw;
 			margin: auto;
 		}
+
+		#chartdiv {
+  width: 100%;
+  height: 500px;
+  max-width: 100%;
+}
+		#controls {
+  overflow: hidden;
+  padding-bottom: 3px;
+}
 
 		div.bar {
 			border: 1px black solid;
@@ -138,8 +154,7 @@
 					<h1 class="ml11">
 						<span class="text-wrapper">
 							<span class="line line1"></span>
-							<span class="letters"
-								style="font-family: 'Montserrat', sans-serif;">Lab05
+							<span class="letters" style="font-family: 'Montserrat', sans-serif;">Lab05
 								Using HTML Division to draw histograms</span>
 						</span>
 					</h1>
@@ -149,17 +164,17 @@
 			<div class="navbar-end">
 				<div class="navbar-item">
 					<div class="buttons" style="font-family: 'Montserrat', sans-serif; "> <a href="./index.html"
-						style="font-family: 'Montserrat', sans-serif; " class="button is-primary is-light"
-						id="listBtn1">Chart.js + D3.js</a>
-					<a href="./index1.html" style="font-family: 'Montserrat', sans-serif; "
-						class="button is-link is-light" id="listBtn1">Highcharts + D3.js</a>
-					<a href="./index3.html" style="font-family: 'Montserrat', sans-serif; "
-						class="button  is-success is-light" id="listBtn1">CHARTIST.JS + D3.js</a>
-					<a class="button  is-success is-light" style="font-family: 'Montserrat', sans-serif; "
-						href="./index4.html">amCharts</a>
-					<a class="button  is-warning is-light" style="font-family: 'Montserrat', sans-serif; "
-						href="./index2.html">D3.js ONLY</a>
-				</div>
+							style="font-family: 'Montserrat', sans-serif; " class="button is-primary is-light"
+							id="listBtn1">Chart.js + D3.js</a>
+						<a href="./index1.html" style="font-family: 'Montserrat', sans-serif; "
+							class="button is-link is-light" id="listBtn1">Highcharts + D3.js</a>
+						<a href="./index3.html" style="font-family: 'Montserrat', sans-serif; "
+							class="button  is-success is-light" id="listBtn1">CHARTIST.JS + D3.js</a>
+						<a class="button  is-success is-light" style="font-family: 'Montserrat', sans-serif; "
+							href="./index4.html">amCharts</a>
+						<a class="button  is-warning is-light" style="font-family: 'Montserrat', sans-serif; "
+							href="./index2.html">D3.js ONLY</a>
+					</div>
 				</div>
 			</div>
 	</nav>
@@ -181,18 +196,19 @@
 					Bulma https://bulma.io/documentation
 				</div>
 			</article>
-			<div class="sss"><canvas id="myChart"></canvas></div>
+			<div class="sss"> <div id="controls"></div>
+			<div id="chartdiv"></div> </div>
 		</div>
 		<div class="column  is-1"></div>
 	</div>
 	<footer class="footer">
 		<div class="content has-text-centered">
-		  <p>
-			vis2021s @
-			<a href="https://4evernaive.github.io/vis2021s/">4evernaive</a>
-		  </p>
+			<p>
+				vis2021s @
+				<a href="https://4evernaive.github.io/vis2021s/">4evernaive</a>
+			</p>
 		</div>
-	  </footer>
+	</footer>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 </body>
 
@@ -231,94 +247,68 @@
 		});
 </script>
 <script>
+	am4core.ready(function() {
+	
+	// Themes begin
+	am4core.useTheme(am4themes_animated);
+	// Themes end
+	
+	// Create chart instance
+	var chart = am4core.create("chartdiv", am4charts.XYChart);
+	chart.scrollbarX = new am4core.Scrollbar();
+	
+	
+	// Load external data
+	chart.dataSource.url = "https://raw.githubusercontent.com/4evernaive/vis2021s/master/lab05/data.csv";
+	chart.dataSource.parser = new am4core.CSVParser();
+	chart.dataSource.parser.options.useColumnNames = true;
+	chart.dataSource.parser.options.reverse = false;
+	
+	// the following line makes value axes to be arranged vertically.
+	chart.leftAxesContainer.layout = "vertical";
 
-
-
-	d3.csv('https://raw.githubusercontent.com/4evernaive/vis2021s/master/lab05/data.csv')
-		.then(makeChart)
-
-	const image = new Image();
-	image.src = './4.png';
-	const plugin = {
-		id: 'custom_canvas_background_image',
-		beforeDraw: (chart) => {
-			if (image.complete) {
-				const ctx = chart.ctx;
-				const { top, left, width, height } = chart.chartArea;
-				const x = left + width / 2 - image.width / 2;
-				const y = top + height / 2 - image.height / 2;
-				ctx.drawImage(image, x, y);
-			} else {
-				image.onload = () => chart.draw();
-			}
-		}
-	};
-	function makeChart(configData) {
-		console.log(configData);
-		var groupBoundary = configData.map(function (d) { return d.組界 });
-		var frequency = configData.map(function (d) { return d.頻率 });
-		var ctx = document.getElementById('myChart').getContext('2d');
-		console.log(groupBoundary, frequency);
-		Chart.defaults.font.family = 'Montserrat', 'sans-serif';
-		Chart.defaults.font.size = 16;
-		var chart = new Chart(ctx, {
-			type: 'bar',
-			plugins: [plugin],
-			data: {
-				labels: groupBoundary,
-				datasets: [
-					{
-						data: frequency,
-						backgroundColor: [
-							'rgba(141, 211, 199, 0.4)',
-							'rgba(255, 100, 179, 0.4)',
-							'rgba(255, 100, 86, 0.4)',
-							'rgba(175, 192, 192, 0.4)',
-							'rgba(154, 162, 235, 0.4)',
-							'rgba(53, 12, 255, 0.4)',
-							'rgba(20, 203, 207, 0.4)'
-						],
-						borderColor: [
-							'rgb(141, 211, 199)',
-							'rgb(255, 100, 179)',
-							'rgb(255, 100, 86)',
-							'rgb(175, 192, 192)',
-							'rgb(154, 162, 235)',
-							'rgb(53, 12, 255)',
-							'rgb(20, 203, 207)'
-						],
-						label: '頻率',
-						borderWidth: 1
-					}
-				]
-			},
-			options: {
-				responsive: true,
-				maintainAspectRatio: false,
-				plugins: {
-					title: {
-						display: true,
-						text: 'LAB05 直方圖'
-					}
-				},
-				scales: {
-					x: {
-						title: {
-							display: true,
-							text: '組界'
-						}
-					},
-					y: {
-						title: {
-							display: true,
-							text: '頻率'
-						}
-					}
-				}
-			}
-		})
-	};
-</script>
-
+	// Create axes
+	var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+	categoryAxis.dataFields.category = "組界";
+	categoryAxis.renderer.grid.template.location = 0;
+	categoryAxis.renderer.minGridDistance = 30;
+	categoryAxis.renderer.labels.template.horizontalCenter = "right";
+	categoryAxis.renderer.labels.template.verticalCenter = "middle";
+	categoryAxis.renderer.labels.template.rotation = 270;
+	categoryAxis.tooltip.disabled = true;
+	categoryAxis.renderer.minHeight = 110;
+	
+	var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+	valueAxis.renderer.minWidth = 50;
+	
+	// Create series
+	var series = chart.series.push(new am4charts.ColumnSeries());
+	series.sequencedInterpolation = true;
+	series.dataFields.valueY = "頻率";
+	series.dataFields.categoryX = "組界";
+	series.tooltipText = "[{categoryX}: bold]{valueY}[/]";
+	series.columns.template.strokeWidth = 0;
+	
+	series.tooltip.pointerOrientation = "vertical";
+	
+	series.columns.template.column.cornerRadiusTopLeft = 10;
+	series.columns.template.column.cornerRadiusTopRight = 10;
+	series.columns.template.column.fillOpacity = 0.8;
+	
+	// on hover, make corner radiuses bigger
+	var hoverState = series.columns.template.column.states.create("hover");
+	hoverState.properties.cornerRadiusTopLeft = 0;
+	hoverState.properties.cornerRadiusTopRight = 0;
+	hoverState.properties.fillOpacity = 1;
+	
+	series.columns.template.adapter.add("fill", function(fill, target) {
+	  return chart.colors.getIndex(target.dataItem.index);
+	});
+	
+	// Cursor
+	chart.cursor = new am4charts.XYCursor();
+	
+	}); // end am4core.ready()
+	</script>
 
 </html>
