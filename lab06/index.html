@@ -15,18 +15,20 @@
 		@import "https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css";
 		@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
 
-		div.sbb {
-			width: 100vw;
-			height: 90vw;
-			margin: auto;
-		}
-
+	
 		body {
 			margin: 0 auto;
 			text-align: center;
 
 		}
 
+		rect:hover { 
+      transition: width, height; 
+      transition-duration: 1s; 
+      background-color: black !important; 
+      opacity: 0.2; 
+      box-shadow: 0 0 2px 1px rgba(0, 0, 0, 1); 
+    }
 		.ml11 {
 			font-size: 1.5em;
 		}
@@ -165,7 +167,7 @@
 	const BARS_TOTAL_HEIGHT = 650 - margin.top - margin.bottom;
 
 	var svg = d3.select("body").selectAll("div.sbb").append("svg")
-		.attr("width"," BARS_TOTAL_WIDTH + margin.right + margin.left")
+		.attr("width", BARS_TOTAL_WIDTH + margin.right + margin.left)
 		.attr("height", BARS_TOTAL_HEIGHT + margin.top + margin.bottom)
 		.append("g")// used for x, y lengend
 		.attr("transform",
@@ -211,7 +213,7 @@
 			'rgba(255, 205, 86, 0.7)',
 			'rgba(75, 192, 192, 0.7)',
 			'rgba(54, 162, 235,0.7)'];
-			var colors1 = ['rgba(255, 99, 132, 1)',
+		var colors1 = ['rgba(255, 99, 132, 1)',
 			'rgba(255, 159, 64, 1)',
 			'rgba(255, 205, 86, 1)',
 			'rgba(75, 192, 192, 1)',
@@ -283,33 +285,7 @@
 				var xPosition = d3.mouse(this)[0] - 15;
 				var yPosition = d3.mouse(this)[1] - 25;
 				tooltip.attr('transform', 'translate(' + xPosition + ',' + yPosition + ')');
-				tooltip.select("text").text(function () {
-					var rt = "";
-					switch (this.parentNode.style.fill) {
-						case "rgba(255, 99, 132, 0.7)":
-							rt = "國文：" + d.y + " " + '屬性一：' + d['attributeOne'] + '\n屬性二：' + d['attributeTwo'];
-							break;
-						case "rgba(255, 159, 64, 0.7)":
-							rt = "英文：" + d.y + " " + '屬性一：' + d['attributeOne'] + '\n屬性二：' + d['attributeTwo'];
-							break;
-						case "rgba(255, 205, 86, 0.7)":
-							rt = "法文：" + d.y + " " + '屬性一：' + d['attributeOne'] + '\n屬性二：' + d['attributeTwo'];
-							break;
-						case "rgba(75, 192, 192, 0.7)":
-							rt = "德文：" + d.y + " " + '屬性一：' + d['attributeOne'] + '\n屬性二：' + d['attributeTwo'];
-							break;
-						default:
-							rt = "日文：" + d.y + " " + '屬性一：' + d['attributeOne'] + '\n屬性二：' + d['attributeTwo'];
-							break;
-					}
-					return rt;
-					//	var colors = ['rgba(255, 99, 132, 1)',
-					//'rgba(255, 159, 64, 1)',
-					//'rgba(255, 205, 86, 1)',
-					//'rgba(75, 192, 192, 1)',
-					//'rgba(54, 162, 235,1)'];
-				})
-				//tooltip.select('text').text('值：' + d.y + ' 屬性一：' + d['attributeOne'] + ' 屬性二：' + d['attributeTwo']);
+				tooltip.select('text').text('值：' + d.y + ' 屬性一：' + d['attributeOne'] + ' 屬性二：' + d['attributeTwo']);
 			});
 
 
