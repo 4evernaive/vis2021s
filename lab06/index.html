@@ -15,7 +15,7 @@
 		@import "https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css";
 		@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
 
-		div.sss {
+		div.sbb {
 			width: 100vw;
 			height: 90vw;
 			margin: auto;
@@ -102,14 +102,11 @@
 			</div>
 	</nav>
 	<br><br><br>
-	<div class="columns">
-		<div class="column is-1"></div>
-		<div class="column is-10">
+
+		
+		
 			<div class="sbb">
 			</div>
-		</div>
-
-	</div>
 
 	<footer class="footer">
 		<div class="content has-text-centered">
@@ -158,17 +155,17 @@
 </script>
 <script type="text/javascript">
 	//var item = items[Math.floor(Math.random() * items.length)];
-	var margin = { top: 50, right: 400, bottom: 20, left: 40 };
+	var margin = { top: 50, right: 270, bottom: 100, left: 200 };
 
 
 	//var width = 1600 - margin.left - margin.right,
 	//		height = 800 - margin.top - margin.bottom;
 
 	const BARS_TOTAL_WIDTH = 1600 - margin.left - margin.right;
-	const BARS_TOTAL_HEIGHT = 800 - margin.top - margin.bottom;
+	const BARS_TOTAL_HEIGHT = 650 - margin.top - margin.bottom;
 
 	var svg = d3.select("body").selectAll("div.sbb").append("svg")
-		.attr("width", BARS_TOTAL_WIDTH + margin.right + margin.left)
+		.attr("width"," BARS_TOTAL_WIDTH + margin.right + margin.left")
 		.attr("height", BARS_TOTAL_HEIGHT + margin.top + margin.bottom)
 		.append("g")// used for x, y lengend
 		.attr("transform",
@@ -209,7 +206,12 @@
 
 
 
-		var colors = ['rgba(255, 99, 132, 1)',
+		var colors = ['rgba(255, 99, 132, 0.7)',
+			'rgba(255, 159, 64, 0.7)',
+			'rgba(255, 205, 86, 0.7)',
+			'rgba(75, 192, 192, 0.7)',
+			'rgba(54, 162, 235,0.7)'];
+			var colors1 = ['rgba(255, 99, 132, 1)',
 			'rgba(255, 159, 64, 1)',
 			'rgba(255, 205, 86, 1)',
 			'rgba(75, 192, 192, 1)',
@@ -241,7 +243,6 @@
 			.selectAll('text')
 			.attr('transform', 'translate(-15, 5) rotate(-45)');
 
-
 		// Create groups for each series, rects for each segment 
 		var groups = svg.selectAll('g.cost')
 			.data(dataset)
@@ -250,7 +251,10 @@
 			.style('fill', function (d, i) {
 				return colors[i];
 			})
-
+			.attr("stroke", function (d, i) {
+				return colors1[i];
+			})
+			.attr("storke-width",'1');
 
 		var rect = groups.selectAll('rect')
 			.data(function (d) {
@@ -259,7 +263,7 @@
 			.enter()
 			.append('rect')
 			.attr('x', function (d) {
-				return x(d.x);
+				return x(d.x)+2;
 			})
 			.attr('y', function (d) {
 				return y(d.y0 + d.y);
@@ -282,16 +286,16 @@
 				tooltip.select("text").text(function () {
 					var rt = "";
 					switch (this.parentNode.style.fill) {
-						case "rgba(255, 99, 132, 1)":
+						case "rgba(255, 99, 132, 0.7)":
 							rt = "國文：" + d.y + " " + '屬性一：' + d['attributeOne'] + '\n屬性二：' + d['attributeTwo'];
 							break;
-						case "rgba(255, 159, 64, 1)":
+						case "rgba(255, 159, 64, 0.7)":
 							rt = "英文：" + d.y + " " + '屬性一：' + d['attributeOne'] + '\n屬性二：' + d['attributeTwo'];
 							break;
-						case "rgba(255, 205, 86, 1)":
+						case "rgba(255, 205, 86, 0.7)":
 							rt = "法文：" + d.y + " " + '屬性一：' + d['attributeOne'] + '\n屬性二：' + d['attributeTwo'];
 							break;
-						case "rgba(75, 192, 192, 1)":
+						case "rgba(75, 192, 192, 0.7)":
 							rt = "德文：" + d.y + " " + '屬性一：' + d['attributeOne'] + '\n屬性二：' + d['attributeTwo'];
 							break;
 						default:
