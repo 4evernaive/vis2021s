@@ -1,14 +1,380 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
-  <head>
-    <meta charset="utf-8">
-    <title>D3 Page Template</title>
-    <script src="http://d3js.org/d3.v6.min.js" charset="utf-8"></script> <!-- v6.5.0 -->
+
+<head>
+	<meta charset="utf-8">
+	<title>d3.js learning</title>
+	<script src="https://d3js.org/d3.v3.min.js?version=012343333356789" charset="utf-8"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js?version=1333344"></script>
+	<style type="text/css">
+		@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=DotGothic16&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=DotGothic16&family=Montserrat&display=swap');
+		@import "https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css";
+		@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
+		div.sss {
+			width: 100vw;
+			height: 90vw;
+			margin: auto;
+		}
+
+		body {
+			margin: 0 auto;
+			text-align: center;
+
+		}
+
+		.ml11 {
+			font-size: 1.5em;
+		}
+
+		.ml11 .text-wrapper {
+			position: relative;
+			display: inline-block;
+			padding-top: 0.1em;
+			padding-right: 0.05em;
+			padding-bottom: 0.15em;
+		}
+
+		.ml11 .line {
+			opacity: 0;
+			position: absolute;
+			left: 0;
+			height: 100%;
+			width: 3px;
+			transform-origin: 0 50%;
+		}
+
+		.ml11 .line1 {
+			top: 0;
+			left: 0;
+		}
+
+		.ml11 .letter {
+			display: inline-block;
+			line-height: 1em;
+		}
+
+		svg {
+			font: 10px sans-serif;
+			shape-rendering: crispEdges;
+		}
+
+		.axis path,
+		.axis line {
+			fill: none;
+			stroke: #000;
+		}
+
+		path.domain {
+			stroke: none;
+		}
+
+		.y .tick line {
+			stroke: #ddd;
+		}
+	</style>
+
 </head>
+
 <body>
-    <script type="text/javascript">
-      // Your beautiful D3 code will go here
-    </script>
-  </body>
+
+	<nav class="navbar is-info is-fixed-top" role="navigation" aria-label="main navigation">
+		<div id="navbarBasicExample" class="navbar-menu">
+			<div class="navbar-start ">
+				<div class="navbar-item">
+					<h1 class="ml11">
+						<span class="text-wrapper">
+							<span class="line line1"></span>
+							<span class="letters" style="font-family: 'DotGothic16', sans-serif; ">Lab 06</span>
+						</span>
+					</h1>
+				</div>
+
+			</div>
+			<div class="navbar-end">
+				<div class="navbar-item">
+
+				</div>
+			</div>
+	</nav>
+	<br><br><br>
+	<div class="columns">
+		<div class="column is-1"></div>
+		<div class="column is-10">
+			<div class="sbb">
+			</div>
+		</div>
+
+	</div>
+
+	<footer class="footer">
+		<div class="content has-text-centered">
+			<p>
+				vis2021s @
+				<a href="https://4evernaive.github.io/vis2021s/">4evernaive</a>
+			</p>
+		</div>
+	</footer>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+</body>
+
+<script type="text/javascript" charset="utf-8">
+	// Wrap every letter in a span
+	var textWrapper = document.querySelector('.ml11 .letters');
+	textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+
+	anime.timeline({ loop: true })
+		.add({
+			targets: '.ml11 .line',
+			scaleY: [0, 1],
+			opacity: [0.5, 1],
+			easing: "easeOutExpo",
+			duration: 700
+		})
+		.add({
+			targets: '.ml11 .line',
+			translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
+			easing: "easeOutExpo",
+			duration: 700,
+			delay: 100
+		}).add({
+			targets: '.ml11 .letter',
+			opacity: [0, 1],
+			easing: "easeOutExpo",
+			duration: 600,
+			offset: '-=775',
+			delay: (el, i) => 34 * (i + 1)
+		}).add({
+			targets: '.ml11',
+			opacity: 0,
+			duration: 1000,
+			easing: "easeOutExpo",
+			delay: 1000
+		});
+</script>
+<script type="text/javascript">
+	//var item = items[Math.floor(Math.random() * items.length)];
+	var margin = { top: 50, right: 400, bottom: 20, left: 40 };
+
+
+	//var width = 1600 - margin.left - margin.right,
+	//		height = 800 - margin.top - margin.bottom;
+
+	const BARS_TOTAL_WIDTH = 1600 - margin.left - margin.right;
+	const BARS_TOTAL_HEIGHT = 800 - margin.top - margin.bottom;
+
+	var svg = d3.select("body").selectAll("div.sbb").append("svg")
+		.attr("width", BARS_TOTAL_WIDTH + margin.right + margin.left)
+		.attr("height", BARS_TOTAL_HEIGHT + margin.top + margin.bottom)
+		.append("g")// used for x, y lengend
+		.attr("transform",
+			"translate(" + margin.left + "," + margin.top + ")");
+
+	d3.csv("https://raw.githubusercontent.com/4evernaive/vis2021s/master/lab06/data.csv", function (data) {
+		var languagesData = data.map(function (row, rowIndex) {
+			row['id'] = rowIndex; // add id
+			return row; // update row
+		});
+
+		// Transpose the data into layers
+		var dataset = d3.layout.stack()(['國文', '英文', '法文', '德文', '日文'].map(function (language) {
+			return languagesData.map(function (d) {
+				return {
+					x: d['id'],
+					y: +d[language],
+					attributeOne: d['屬性一'],
+					attributeTwo: d['屬性二']
+				};
+			});
+		}));
+
+		// Set x, y and colors
+		var x = d3.scale.ordinal()
+			.domain(dataset[0].map(function (d) {
+				return d.x;
+			}))
+			.rangeRoundBands([10, BARS_TOTAL_WIDTH - 10], 0.02);
+
+		var y = d3.scale.linear()
+			.domain([0, d3.max(dataset, function (d) {
+				return d3.max(d, function (d) {
+					return d.y0 + d.y;
+				});
+			})])
+			.range([BARS_TOTAL_HEIGHT, 0]);
+
+
+
+		var colors = ['rgba(255, 99, 132, 1)',
+			'rgba(255, 159, 64, 1)',
+			'rgba(255, 205, 86, 1)',
+			'rgba(75, 192, 192, 1)',
+			'rgba(54, 162, 235,1)'];
+		var randomElement = _.sample(randomElement);
+		// Define and draw axes
+		var yAxis = d3.svg.axis()
+			.scale(y)
+			.orient('left')
+			.ticks(5)
+			.tickSize(-BARS_TOTAL_WIDTH, 0, 0)
+			.tickFormat(function (d) {
+				return d;
+			});
+
+		var xAxis = d3.svg.axis()
+			.scale(x)
+			.orient('bottom')
+			.tickValues([0, 50, 100, 150, 200, 250]);
+
+		svg.append('g')
+			.attr('class', 'y axis')
+			.call(yAxis);
+
+		svg.append('g')
+			.attr('class', 'x axis')
+			.attr('transform', 'translate(0,' + BARS_TOTAL_HEIGHT + ')')
+			.call(xAxis)
+			.selectAll('text')
+			.attr('transform', 'translate(-15, 5) rotate(-45)');
+
+
+		// Create groups for each series, rects for each segment 
+		var groups = svg.selectAll('g.cost')
+			.data(dataset)
+			.enter().append('g')
+			.attr('class', 'cost')
+			.style('fill', function (d, i) {
+				return colors[i];
+			})
+
+
+		var rect = groups.selectAll('rect')
+			.data(function (d) {
+				return d;
+			})
+			.enter()
+			.append('rect')
+			.attr('x', function (d) {
+				return x(d.x);
+			})
+			.attr('y', function (d) {
+				return y(d.y0 + d.y);
+			})
+			.attr('height', function (d) {
+				return y(d.y0) - y(d.y0 + d.y);
+			})
+			.attr('width', x.rangeBand())
+
+			.on('mouseover', function () {
+				tooltip.style('display', null);
+			})
+			.on('mouseout', function () {
+				tooltip.style('display', 'none');
+			})
+			.on('mousemove', function (d) {
+				var xPosition = d3.mouse(this)[0] - 15;
+				var yPosition = d3.mouse(this)[1] - 25;
+				tooltip.attr('transform', 'translate(' + xPosition + ',' + yPosition + ')');
+				tooltip.select("text").text(function () {
+					var rt = "";
+					switch (this.parentNode.style.fill) {
+						case "rgba(255, 99, 132, 1)":
+							rt = "國文：" + d.y + " " + '屬性一：' + d['attributeOne'] + '\n屬性二：' + d['attributeTwo'];
+							break;
+						case "rgba(255, 159, 64, 1)":
+							rt = "英文：" + d.y + " " + '屬性一：' + d['attributeOne'] + '\n屬性二：' + d['attributeTwo'];
+							break;
+						case "rgba(255, 205, 86, 1)":
+							rt = "法文：" + d.y + " " + '屬性一：' + d['attributeOne'] + '\n屬性二：' + d['attributeTwo'];
+							break;
+						case "rgba(75, 192, 192, 1)":
+							rt = "德文：" + d.y + " " + '屬性一：' + d['attributeOne'] + '\n屬性二：' + d['attributeTwo'];
+							break;
+						default:
+							rt = "日文：" + d.y + " " + '屬性一：' + d['attributeOne'] + '\n屬性二：' + d['attributeTwo'];
+							break;
+					}
+					return rt;
+					//	var colors = ['rgba(255, 99, 132, 1)',
+					//'rgba(255, 159, 64, 1)',
+					//'rgba(255, 205, 86, 1)',
+					//'rgba(75, 192, 192, 1)',
+					//'rgba(54, 162, 235,1)'];
+				})
+				//tooltip.select('text').text('值：' + d.y + ' 屬性一：' + d['attributeOne'] + ' 屬性二：' + d['attributeTwo']);
+			});
+
+
+
+		var legend = svg.selectAll('.legend')
+			.data(colors)
+			.enter().append('g')
+			.attr('class', 'legend')
+			.attr('transform', function (d, i) {
+				return 'translate(30,' + i * 30 + ')';
+			});
+
+		legend.append('rect')
+			.attr('x', BARS_TOTAL_WIDTH - 18)
+			.attr('width', 18)
+			.attr('height', 18)
+			.style('fill', function (d, i) {
+				return colors.slice().reverse()[i];
+			});
+
+		legend.append('text')
+			.attr('x', BARS_TOTAL_WIDTH + 5)
+			.attr('y', 9)
+			.attr('dy', '.35em')
+			.style('font-family', "DotGothic16")
+			.style('text-anchor', 'start')
+			.text(function (d, i) {
+				switch (i) {
+					case 0:
+						return '日文';
+					case 1:
+						return '德文';
+					case 2:
+						return '法文';
+					case 3:
+						return '英文';
+					case 4:
+						return '國文';
+					case 5:
+						return '屬性一：1';
+					case 6:
+						return '屬性一：2';
+					case 7:
+						return '屬性二：0';
+					case 8:
+						return '屬性二：1';
+				}
+			})
+			.attr('font-size', '24px');
+
+
+		// Prep the tooltip bits, initial display is hidden
+		var tooltip = svg.append('g')
+			.attr('class', 'tooltip')
+			.style('display', 'none');
+
+		tooltip.append('rect')
+			.attr('width', 200)
+			.attr('height', 20)
+			.attr('fill', 'white')
+			.style('opacity', 0.6);
+
+		tooltip.append('text')
+			.attr('x', 15)
+			.attr('dy', '1.2em')
+			.attr('font-size', '12px')
+			.attr('font-weight', 'bold');
+	});
+</script>
+
+
 </html>
-  
