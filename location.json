@@ -1,0 +1,3185 @@
+[
+    {
+        "id": 1,
+        "name": "Canalave City"
+    },
+    {
+        "id": 2,
+        "name": "Eterna City"
+    },
+    {
+        "id": 3,
+        "name": "Pastoria City"
+    },
+    {
+        "id": 4,
+        "name": "Sunyshore City"
+    },
+    {
+        "id": 5,
+        "name": "Pok\u00e9mon League"
+    },
+    {
+        "id": 6,
+        "name": "Oreburgh Mine"
+    },
+    {
+        "id": 7,
+        "name": "Valley Windworks"
+    },
+    {
+        "id": 8,
+        "name": "Eterna Forest"
+    },
+    {
+        "id": 9,
+        "name": "Fuego Ironworks"
+    },
+    {
+        "id": 10,
+        "name": "Mt. Coronet"
+    },
+    {
+        "id": 11,
+        "name": "Great Marsh"
+    },
+    {
+        "id": 12,
+        "name": "Solaceon Ruins"
+    },
+    {
+        "id": 13,
+        "name": "Victory Road"
+    },
+    {
+        "id": 14,
+        "name": "Ravaged Path"
+    },
+    {
+        "id": 15,
+        "name": "Oreburgh Gate"
+    },
+    {
+        "id": 16,
+        "name": "Stark Mountain"
+    },
+    {
+        "id": 17,
+        "name": "Spring Path"
+    },
+    {
+        "id": 18,
+        "name": "Turnback Cave"
+    },
+    {
+        "id": 19,
+        "name": "Snowpoint Temple"
+    },
+    {
+        "id": 20,
+        "name": "Wayward Cave"
+    },
+    {
+        "id": 22,
+        "name": "Ruin Maniac Cave"
+    },
+    {
+        "id": 23,
+        "name": "Trophy Garden"
+    },
+    {
+        "id": 24,
+        "name": "Iron Island"
+    },
+    {
+        "id": 25,
+        "name": "Old Chateau"
+    },
+    {
+        "id": 26,
+        "name": "Lake Verity"
+    },
+    {
+        "id": 27,
+        "name": "Lake Valor"
+    },
+    {
+        "id": 28,
+        "name": "Lake Acuity"
+    },
+    {
+        "id": 29,
+        "name": "Valor Lakefront"
+    },
+    {
+        "id": 30,
+        "name": "Acuity Lakefront"
+    },
+    {
+        "id": 31,
+        "name": "Route 201"
+    },
+    {
+        "id": 32,
+        "name": "Route 202"
+    },
+    {
+        "id": 33,
+        "name": "Route 203"
+    },
+    {
+        "id": 34,
+        "name": "Route 204"
+    },
+    {
+        "id": 35,
+        "name": "Route 205"
+    },
+    {
+        "id": 36,
+        "name": "Route 206"
+    },
+    {
+        "id": 37,
+        "name": "Route 207"
+    },
+    {
+        "id": 38,
+        "name": "Route 208"
+    },
+    {
+        "id": 39,
+        "name": "Route 209"
+    },
+    {
+        "id": 40,
+        "name": "Lost Tower"
+    },
+    {
+        "id": 41,
+        "name": "Route 210"
+    },
+    {
+        "id": 42,
+        "name": "Route 211"
+    },
+    {
+        "id": 43,
+        "name": "Route 212"
+    },
+    {
+        "id": 44,
+        "name": "Route 213"
+    },
+    {
+        "id": 45,
+        "name": "Route 214"
+    },
+    {
+        "id": 46,
+        "name": "Route 215"
+    },
+    {
+        "id": 47,
+        "name": "Route 216"
+    },
+    {
+        "id": 48,
+        "name": "Route 217"
+    },
+    {
+        "id": 49,
+        "name": "Route 218"
+    },
+    {
+        "id": 50,
+        "name": "Route 219"
+    },
+    {
+        "id": 51,
+        "name": "Route 221"
+    },
+    {
+        "id": 52,
+        "name": "Route 222"
+    },
+    {
+        "id": 53,
+        "name": "Route 224"
+    },
+    {
+        "id": 54,
+        "name": "Route 225"
+    },
+    {
+        "id": 55,
+        "name": "Route 227"
+    },
+    {
+        "id": 56,
+        "name": "Route 228"
+    },
+    {
+        "id": 57,
+        "name": "Route 229"
+    },
+    {
+        "id": 58,
+        "name": "Twinleaf Town"
+    },
+    {
+        "id": 59,
+        "name": "Celestic Town"
+    },
+    {
+        "id": 60,
+        "name": "Resort Area"
+    },
+    {
+        "id": 61,
+        "name": "Sea Route 220"
+    },
+    {
+        "id": 62,
+        "name": "Sea Route 223"
+    },
+    {
+        "id": 63,
+        "name": "Sea Route 226"
+    },
+    {
+        "id": 64,
+        "name": "Sea Route 230"
+    },
+    {
+        "id": 65,
+        "name": "Blackthorn City"
+    },
+    {
+        "id": 66,
+        "name": "Burned Tower"
+    },
+    {
+        "id": 67,
+        "name": "Celadon City"
+    },
+    {
+        "id": 68,
+        "name": "Cerulean City"
+    },
+    {
+        "id": 69,
+        "name": "Cherrygrove City"
+    },
+    {
+        "id": 70,
+        "name": "Cianwood City"
+    },
+    {
+        "id": 71,
+        "name": "Cinnabar Island"
+    },
+    {
+        "id": 72,
+        "name": "Dark Cave"
+    },
+    {
+        "id": 73,
+        "name": "Diglett's Cave"
+    },
+    {
+        "id": 74,
+        "name": "Dragon's Den"
+    },
+    {
+        "id": 75,
+        "name": "Ecruteak City"
+    },
+    {
+        "id": 76,
+        "name": "Fuchsia City"
+    },
+    {
+        "id": 77,
+        "name": "Ice Path"
+    },
+    {
+        "id": 78,
+        "name": "Ilex Forest"
+    },
+    {
+        "id": 79,
+        "name": "Lake of Rage"
+    },
+    {
+        "id": 80,
+        "name": "Three Isle Path"
+    },
+    {
+        "id": 81,
+        "name": "Mt. Mortar"
+    },
+    {
+        "id": 82,
+        "name": "Mt. Silver"
+    },
+    {
+        "id": 83,
+        "name": "National Park"
+    },
+    {
+        "id": 84,
+        "name": "New Bark Town"
+    },
+    {
+        "id": 85,
+        "name": "Olivine City"
+    },
+    {
+        "id": 86,
+        "name": "Pallet Town"
+    },
+    {
+        "id": 87,
+        "name": "Rock Tunnel"
+    },
+    {
+        "id": 88,
+        "name": "Route 1"
+    },
+    {
+        "id": 89,
+        "name": "Route 10"
+    },
+    {
+        "id": 90,
+        "name": "Route 11"
+    },
+    {
+        "id": 91,
+        "name": "Route 12"
+    },
+    {
+        "id": 92,
+        "name": "Route 13"
+    },
+    {
+        "id": 93,
+        "name": "Route 14"
+    },
+    {
+        "id": 94,
+        "name": "Route 15"
+    },
+    {
+        "id": 95,
+        "name": "Route 16"
+    },
+    {
+        "id": 96,
+        "name": "Route 17"
+    },
+    {
+        "id": 97,
+        "name": "Route 18"
+    },
+    {
+        "id": 98,
+        "name": "Sea Route 19"
+    },
+    {
+        "id": 99,
+        "name": "Route 2"
+    },
+    {
+        "id": 100,
+        "name": "Sea Route 20"
+    },
+    {
+        "id": 101,
+        "name": "Sea Route 21"
+    },
+    {
+        "id": 102,
+        "name": "Route 22"
+    },
+    {
+        "id": 103,
+        "name": "Route 24"
+    },
+    {
+        "id": 104,
+        "name": "Route 25"
+    },
+    {
+        "id": 105,
+        "name": "Route 26"
+    },
+    {
+        "id": 106,
+        "name": "Route 27"
+    },
+    {
+        "id": 107,
+        "name": "Route 28"
+    },
+    {
+        "id": 108,
+        "name": "Route 29"
+    },
+    {
+        "id": 109,
+        "name": "Route 3"
+    },
+    {
+        "id": 110,
+        "name": "Route 30"
+    },
+    {
+        "id": 111,
+        "name": "Route 31"
+    },
+    {
+        "id": 112,
+        "name": "Route 32"
+    },
+    {
+        "id": 113,
+        "name": "Route 33"
+    },
+    {
+        "id": 114,
+        "name": "Route 34"
+    },
+    {
+        "id": 115,
+        "name": "Route 35"
+    },
+    {
+        "id": 116,
+        "name": "Route 36"
+    },
+    {
+        "id": 117,
+        "name": "Route 37"
+    },
+    {
+        "id": 118,
+        "name": "Route 38"
+    },
+    {
+        "id": 119,
+        "name": "Route 39"
+    },
+    {
+        "id": 120,
+        "name": "Route 4"
+    },
+    {
+        "id": 121,
+        "name": "Sea Route 40"
+    },
+    {
+        "id": 122,
+        "name": "Sea Route 41"
+    },
+    {
+        "id": 123,
+        "name": "Route 42"
+    },
+    {
+        "id": 124,
+        "name": "Route 43"
+    },
+    {
+        "id": 125,
+        "name": "Route 44"
+    },
+    {
+        "id": 126,
+        "name": "Route 45"
+    },
+    {
+        "id": 127,
+        "name": "Route 46"
+    },
+    {
+        "id": 128,
+        "name": "Route 47"
+    },
+    {
+        "id": 129,
+        "name": "Route 48"
+    },
+    {
+        "id": 130,
+        "name": "Route 5"
+    },
+    {
+        "id": 131,
+        "name": "Route 6"
+    },
+    {
+        "id": 132,
+        "name": "Route 7"
+    },
+    {
+        "id": 133,
+        "name": "Route 8"
+    },
+    {
+        "id": 134,
+        "name": "Route 9"
+    },
+    {
+        "id": 135,
+        "name": "Ruins of Alph"
+    },
+    {
+        "id": 136,
+        "name": "Seafoam Islands"
+    },
+    {
+        "id": 137,
+        "name": "Slowpoke Well"
+    },
+    {
+        "id": 138,
+        "name": "Sprout Tower"
+    },
+    {
+        "id": 139,
+        "name": "Bell Tower"
+    },
+    {
+        "id": 140,
+        "name": "Tohjo Falls"
+    },
+    {
+        "id": 141,
+        "name": "Union Cave"
+    },
+    {
+        "id": 147,
+        "name": "Cerulean Cave"
+    },
+    {
+        "id": 148,
+        "name": "Unknown; all Poliwag"
+    },
+    {
+        "id": 149,
+        "name": "Unknown; all Rattata"
+    },
+    {
+        "id": 150,
+        "name": "Unknown; all bugs"
+    },
+    {
+        "id": 151,
+        "name": "Vermilion City"
+    },
+    {
+        "id": 152,
+        "name": "Victory Road"
+    },
+    {
+        "id": 153,
+        "name": "Violet City"
+    },
+    {
+        "id": 154,
+        "name": "Viridian City"
+    },
+    {
+        "id": 155,
+        "name": "Viridian Forest"
+    },
+    {
+        "id": 156,
+        "name": "Whirl Islands"
+    },
+    {
+        "id": 157,
+        "name": "Route 23"
+    },
+    {
+        "id": 158,
+        "name": "Power Plant"
+    },
+    {
+        "id": 159,
+        "name": "Victory Road"
+    },
+    {
+        "id": 160,
+        "name": "Pok\u00e9mon Tower"
+    },
+    {
+        "id": 161,
+        "name": "Pok\u00e9mon Mansion"
+    },
+    {
+        "id": 162,
+        "name": "Safari Zone"
+    },
+    {
+        "id": 163,
+        "name": "Sandgem Town"
+    },
+    {
+        "id": 164,
+        "name": "Floaroma Town"
+    },
+    {
+        "id": 165,
+        "name": "Solaceon Town"
+    },
+    {
+        "id": 167,
+        "name": "Jubilife City"
+    },
+    {
+        "id": 168,
+        "name": "Oreburgh City"
+    },
+    {
+        "id": 169,
+        "name": "Hearthome City"
+    },
+    {
+        "id": 170,
+        "name": "Veilstone City"
+    },
+    {
+        "id": 171,
+        "name": "Snowpoint City"
+    },
+    {
+        "id": 172,
+        "name": "Spear Pillar"
+    },
+    {
+        "id": 173,
+        "name": "Pal Park"
+    },
+    {
+        "id": 174,
+        "name": "Amity Square"
+    },
+    {
+        "id": 175,
+        "name": "Floaroma Meadow"
+    },
+    {
+        "id": 177,
+        "name": "Fullmoon Island"
+    },
+    {
+        "id": 178,
+        "name": "Sendoff Spring"
+    },
+    {
+        "id": 179,
+        "name": "Flower Paradise"
+    },
+    {
+        "id": 180,
+        "name": "Maniac Tunnel"
+    },
+    {
+        "id": 181,
+        "name": "Galactic HQ"
+    },
+    {
+        "id": 182,
+        "name": "Verity Lakefront"
+    },
+    {
+        "id": 183,
+        "name": "Newmoon Island"
+    },
+    {
+        "id": 184,
+        "name": "Battle Tower"
+    },
+    {
+        "id": 185,
+        "name": "Fight Area"
+    },
+    {
+        "id": 186,
+        "name": "Survival Area"
+    },
+    {
+        "id": 187,
+        "name": "Seabreak Path"
+    },
+    {
+        "id": 188,
+        "name": "Hall of Origin"
+    },
+    {
+        "id": 189,
+        "name": "Hall of Origin"
+    },
+    {
+        "id": 190,
+        "name": "Verity Cavern"
+    },
+    {
+        "id": 191,
+        "name": "Valor Cavern"
+    },
+    {
+        "id": 192,
+        "name": "Acuity Cavern"
+    },
+    {
+        "id": 193,
+        "name": "Jubilife TV"
+    },
+    {
+        "id": 194,
+        "name": "Pok\u00e9tch Co."
+    },
+    {
+        "id": 195,
+        "name": "GTS"
+    },
+    {
+        "id": 196,
+        "name": "Trainers\u2019 School"
+    },
+    {
+        "id": 197,
+        "name": "Mining Museum"
+    },
+    {
+        "id": 198,
+        "name": "Flower Shop"
+    },
+    {
+        "id": 199,
+        "name": "Cycle Shop"
+    },
+    {
+        "id": 200,
+        "name": "Contest Hall"
+    },
+    {
+        "id": 201,
+        "name": "Poffin House"
+    },
+    {
+        "id": 202,
+        "name": "Foreign Building"
+    },
+    {
+        "id": 203,
+        "name": "Pok\u00e9mon Day Care"
+    },
+    {
+        "id": 204,
+        "name": "Veilstone Store"
+    },
+    {
+        "id": 205,
+        "name": "Game Corner"
+    },
+    {
+        "id": 206,
+        "name": "Canalave Library"
+    },
+    {
+        "id": 207,
+        "name": "Vista Lighthouse"
+    },
+    {
+        "id": 208,
+        "name": "Sunyshore Market"
+    },
+    {
+        "id": 209,
+        "name": "Footstep House"
+    },
+    {
+        "id": 210,
+        "name": "Caf\u00e9"
+    },
+    {
+        "id": 211,
+        "name": "Grand Lake"
+    },
+    {
+        "id": 212,
+        "name": "Restaurant"
+    },
+    {
+        "id": 213,
+        "name": "Battle Park"
+    },
+    {
+        "id": 214,
+        "name": "Battle Frontier"
+    },
+    {
+        "id": 215,
+        "name": "Battle Factory"
+    },
+    {
+        "id": 216,
+        "name": "Battle Castle"
+    },
+    {
+        "id": 217,
+        "name": "Battle Arcade"
+    },
+    {
+        "id": 218,
+        "name": "Battle Hall"
+    },
+    {
+        "id": 219,
+        "name": "Distortion World"
+    },
+    {
+        "id": 220,
+        "name": "Global Terminal"
+    },
+    {
+        "id": 221,
+        "name": "Villa"
+    },
+    {
+        "id": 222,
+        "name": "Battleground"
+    },
+    {
+        "id": 223,
+        "name": "ROTOM's Room"
+    },
+    {
+        "id": 224,
+        "name": "T.G. Eterna Bldg"
+    },
+    {
+        "id": 225,
+        "name": "Iron Ruins"
+    },
+    {
+        "id": 226,
+        "name": "Iceberg Ruins"
+    },
+    {
+        "id": 227,
+        "name": "Rock Peak Ruins"
+    },
+    {
+        "id": 228,
+        "name": "Azalea Town"
+    },
+    {
+        "id": 229,
+        "name": "Goldenrod City"
+    },
+    {
+        "id": 230,
+        "name": "Mahogany Town"
+    },
+    {
+        "id": 231,
+        "name": "Pewter City"
+    },
+    {
+        "id": 232,
+        "name": "Lavender Town"
+    },
+    {
+        "id": 233,
+        "name": "Indigo Plateau"
+    },
+    {
+        "id": 234,
+        "name": "Saffron City"
+    },
+    {
+        "id": 236,
+        "name": "Lighthouse"
+    },
+    {
+        "id": 237,
+        "name": "Team Rocket HQ"
+    },
+    {
+        "id": 238,
+        "name": "Goldenrod Tunnel"
+    },
+    {
+        "id": 239,
+        "name": "Mt. Silver Cave"
+    },
+    {
+        "id": 241,
+        "name": "Pok\u00e9athlon Dome"
+    },
+    {
+        "id": 242,
+        "name": "S.S. Aqua"
+    },
+    {
+        "id": 243,
+        "name": "Safari Zone Gate"
+    },
+    {
+        "id": 244,
+        "name": "Cliff Cave"
+    },
+    {
+        "id": 245,
+        "name": "Frontier Access"
+    },
+    {
+        "id": 246,
+        "name": "Bellchime Trail"
+    },
+    {
+        "id": 247,
+        "name": "Sinjoh Ruins"
+    },
+    {
+        "id": 248,
+        "name": "Embedded Tower"
+    },
+    {
+        "id": 249,
+        "name": "Pok\u00e9walker"
+    },
+    {
+        "id": 250,
+        "name": "Cliff Edge Gate"
+    },
+    {
+        "id": 252,
+        "name": "Radio Tower"
+    },
+    {
+        "id": 253,
+        "name": "Day-Care Couple"
+    },
+    {
+        "id": 254,
+        "name": "Link trade (arrive)"
+    },
+    {
+        "id": 255,
+        "name": "Link trade (met)"
+    },
+    {
+        "id": 256,
+        "name": "Kanto"
+    },
+    {
+        "id": 257,
+        "name": "Johto"
+    },
+    {
+        "id": 258,
+        "name": "Hoenn"
+    },
+    {
+        "id": 259,
+        "name": "Sinnoh"
+    },
+    {
+        "id": 260,
+        "name": "Distant land"
+    },
+    {
+        "id": 261,
+        "name": "Traveling Man"
+    },
+    {
+        "id": 262,
+        "name": "Riley"
+    },
+    {
+        "id": 263,
+        "name": "Cynthia"
+    },
+    {
+        "id": 264,
+        "name": "Mystery Zone"
+    },
+    {
+        "id": 265,
+        "name": "Lovely place"
+    },
+    {
+        "id": 266,
+        "name": "Pok\u00e9mon Ranger"
+    },
+    {
+        "id": 267,
+        "name": "Faraway place"
+    },
+    {
+        "id": 268,
+        "name": "Pok\u00e9mon Movie"
+    },
+    {
+        "id": 269,
+        "name": "Pok\u00e9mon Movie 06"
+    },
+    {
+        "id": 270,
+        "name": "Pok\u00e9mon Movie 07"
+    },
+    {
+        "id": 271,
+        "name": "Pok\u00e9mon Movie 08"
+    },
+    {
+        "id": 272,
+        "name": "Pok\u00e9mon Movie 09"
+    },
+    {
+        "id": 273,
+        "name": "Pok\u00e9mon Movie 10"
+    },
+    {
+        "id": 274,
+        "name": "Pok\u00e9mon Movie 11"
+    },
+    {
+        "id": 275,
+        "name": "Pok\u00e9mon Movie 12"
+    },
+    {
+        "id": 276,
+        "name": "Pok\u00e9mon Movie 13"
+    },
+    {
+        "id": 277,
+        "name": "Pok\u00e9mon Movie 14"
+    },
+    {
+        "id": 278,
+        "name": "Pok\u00e9mon Movie 15"
+    },
+    {
+        "id": 279,
+        "name": "Pok\u00e9mon Movie 16"
+    },
+    {
+        "id": 280,
+        "name": "Pok\u00e9mon Cartoon"
+    },
+    {
+        "id": 281,
+        "name": "Space World"
+    },
+    {
+        "id": 282,
+        "name": "Space World 06"
+    },
+    {
+        "id": 283,
+        "name": "Space World 07"
+    },
+    {
+        "id": 284,
+        "name": "Space World 08"
+    },
+    {
+        "id": 285,
+        "name": "Space World 09"
+    },
+    {
+        "id": 286,
+        "name": "Space World 10"
+    },
+    {
+        "id": 287,
+        "name": "Space World 11"
+    },
+    {
+        "id": 288,
+        "name": "Space World 12"
+    },
+    {
+        "id": 289,
+        "name": "Space World 13"
+    },
+    {
+        "id": 290,
+        "name": "Space World 14"
+    },
+    {
+        "id": 291,
+        "name": "Space World 15"
+    },
+    {
+        "id": 292,
+        "name": "Space World 16"
+    },
+    {
+        "id": 293,
+        "name": "Pok\u00e9mon Festa"
+    },
+    {
+        "id": 294,
+        "name": "Pok\u00e9mon Festa 06"
+    },
+    {
+        "id": 295,
+        "name": "Pok\u00e9mon Festa 07"
+    },
+    {
+        "id": 296,
+        "name": "Pok\u00e9mon Festa 08"
+    },
+    {
+        "id": 297,
+        "name": "Pok\u00e9mon Festa 09"
+    },
+    {
+        "id": 298,
+        "name": "Pok\u00e9mon Festa 10"
+    },
+    {
+        "id": 299,
+        "name": "Pok\u00e9mon Festa 11"
+    },
+    {
+        "id": 300,
+        "name": "Pok\u00e9mon Festa 12"
+    },
+    {
+        "id": 301,
+        "name": "Pok\u00e9mon Festa 13"
+    },
+    {
+        "id": 302,
+        "name": "Pok\u00e9mon Festa 14"
+    },
+    {
+        "id": 303,
+        "name": "Pok\u00e9mon Festa 15"
+    },
+    {
+        "id": 304,
+        "name": "Pok\u00e9mon Festa 16"
+    },
+    {
+        "id": 305,
+        "name": "POK\u00e9PARK"
+    },
+    {
+        "id": 306,
+        "name": "POK\u00e9PARK 06"
+    },
+    {
+        "id": 307,
+        "name": "POK\u00e9PARK 07"
+    },
+    {
+        "id": 308,
+        "name": "POK\u00e9PARK 08"
+    },
+    {
+        "id": 309,
+        "name": "POK\u00e9PARK 09"
+    },
+    {
+        "id": 310,
+        "name": "POK\u00e9PARK 10"
+    },
+    {
+        "id": 311,
+        "name": "POK\u00e9PARK 11"
+    },
+    {
+        "id": 312,
+        "name": "POK\u00e9PARK 12"
+    },
+    {
+        "id": 313,
+        "name": "POK\u00e9PARK 13"
+    },
+    {
+        "id": 314,
+        "name": "POK\u00e9PARK 14"
+    },
+    {
+        "id": 315,
+        "name": "POK\u00e9PARK 15"
+    },
+    {
+        "id": 316,
+        "name": "POK\u00e9PARK 16"
+    },
+    {
+        "id": 317,
+        "name": "Pok\u00e9mon Center"
+    },
+    {
+        "id": 318,
+        "name": "PC Tokyo"
+    },
+    {
+        "id": 319,
+        "name": "PC Osaka"
+    },
+    {
+        "id": 320,
+        "name": "PC Fukuoka"
+    },
+    {
+        "id": 321,
+        "name": "PC Nagoya"
+    },
+    {
+        "id": 322,
+        "name": "PC Sapporo"
+    },
+    {
+        "id": 323,
+        "name": "PC Yokohama"
+    },
+    {
+        "id": 324,
+        "name": "Nintendo World"
+    },
+    {
+        "id": 325,
+        "name": "Pok\u00e9mon Event"
+    },
+    {
+        "id": 326,
+        "name": "Pok\u00e9mon Event 06"
+    },
+    {
+        "id": 327,
+        "name": "Pok\u00e9mon Event 07"
+    },
+    {
+        "id": 328,
+        "name": "Pok\u00e9mon Event 08"
+    },
+    {
+        "id": 329,
+        "name": "Pok\u00e9mon Event 09"
+    },
+    {
+        "id": 330,
+        "name": "Pok\u00e9mon Event 10"
+    },
+    {
+        "id": 331,
+        "name": "Pok\u00e9mon Event 11"
+    },
+    {
+        "id": 332,
+        "name": "Pok\u00e9mon Event 12"
+    },
+    {
+        "id": 333,
+        "name": "Pok\u00e9mon Event 13"
+    },
+    {
+        "id": 334,
+        "name": "Pok\u00e9mon Event 14"
+    },
+    {
+        "id": 335,
+        "name": "Pok\u00e9mon Event 15"
+    },
+    {
+        "id": 336,
+        "name": "Pok\u00e9mon Event 16"
+    },
+    {
+        "id": 337,
+        "name": "Wi-Fi Event"
+    },
+    {
+        "id": 338,
+        "name": "Wi-Fi Gift"
+    },
+    {
+        "id": 339,
+        "name": "Pok\u00e9mon Fan Club"
+    },
+    {
+        "id": 340,
+        "name": "Event Site"
+    },
+    {
+        "id": 341,
+        "name": "Concert Event"
+    },
+    {
+        "id": 342,
+        "name": "Mr. Pok\u00e9mon"
+    },
+    {
+        "id": 343,
+        "name": "Primo"
+    },
+    {
+        "id": 344,
+        "name": "Mystery Zone"
+    },
+    {
+        "id": 345,
+        "name": "Faraway place"
+    },
+    {
+        "id": 346,
+        "name": "Nuvema Town"
+    },
+    {
+        "id": 347,
+        "name": "Accumula Town"
+    },
+    {
+        "id": 348,
+        "name": "Striaton City"
+    },
+    {
+        "id": 349,
+        "name": "Nacrene City"
+    },
+    {
+        "id": 350,
+        "name": "Castelia City"
+    },
+    {
+        "id": 351,
+        "name": "Nimbasa City"
+    },
+    {
+        "id": 352,
+        "name": "Driftveil City"
+    },
+    {
+        "id": 353,
+        "name": "Mistralton City"
+    },
+    {
+        "id": 354,
+        "name": "Icirrus City"
+    },
+    {
+        "id": 355,
+        "name": "Opelucid City"
+    },
+    {
+        "id": 356,
+        "name": "Route 1"
+    },
+    {
+        "id": 357,
+        "name": "Route 2"
+    },
+    {
+        "id": 358,
+        "name": "Route 3"
+    },
+    {
+        "id": 359,
+        "name": "Route 4"
+    },
+    {
+        "id": 360,
+        "name": "Route 5"
+    },
+    {
+        "id": 361,
+        "name": "Route 6"
+    },
+    {
+        "id": 362,
+        "name": "Route 7"
+    },
+    {
+        "id": 363,
+        "name": "Route 8"
+    },
+    {
+        "id": 364,
+        "name": "Route 9"
+    },
+    {
+        "id": 365,
+        "name": "Route 10"
+    },
+    {
+        "id": 366,
+        "name": "Route 11"
+    },
+    {
+        "id": 367,
+        "name": "Route 12"
+    },
+    {
+        "id": 368,
+        "name": "Route 13"
+    },
+    {
+        "id": 369,
+        "name": "Route 14"
+    },
+    {
+        "id": 370,
+        "name": "Route 15"
+    },
+    {
+        "id": 371,
+        "name": "Route 16"
+    },
+    {
+        "id": 372,
+        "name": "Route 17"
+    },
+    {
+        "id": 373,
+        "name": "Route 18"
+    },
+    {
+        "id": 374,
+        "name": "Dreamyard"
+    },
+    {
+        "id": 375,
+        "name": "Pinwheel Forest"
+    },
+    {
+        "id": 376,
+        "name": "Desert Resort"
+    },
+    {
+        "id": 377,
+        "name": "Relic Castle"
+    },
+    {
+        "id": 378,
+        "name": "Cold Storage"
+    },
+    {
+        "id": 379,
+        "name": "Chargestone Cave"
+    },
+    {
+        "id": 380,
+        "name": "Twist Mountain"
+    },
+    {
+        "id": 381,
+        "name": "Dragonspiral Tower"
+    },
+    {
+        "id": 382,
+        "name": "Victory Road"
+    },
+    {
+        "id": 383,
+        "name": "Lacunosa Town"
+    },
+    {
+        "id": 384,
+        "name": "Undella Town"
+    },
+    {
+        "id": 385,
+        "name": "Anville Town"
+    },
+    {
+        "id": 386,
+        "name": "Pok\u00e9mon League"
+    },
+    {
+        "id": 387,
+        "name": "N's Castle"
+    },
+    {
+        "id": 388,
+        "name": "Royal Unova"
+    },
+    {
+        "id": 389,
+        "name": "Gear Station"
+    },
+    {
+        "id": 390,
+        "name": "Battle Subway"
+    },
+    {
+        "id": 391,
+        "name": "Musical Theater"
+    },
+    {
+        "id": 392,
+        "name": "Black City"
+    },
+    {
+        "id": 393,
+        "name": "White Forest"
+    },
+    {
+        "id": 394,
+        "name": "Unity Tower"
+    },
+    {
+        "id": 395,
+        "name": "Wellspring Cave"
+    },
+    {
+        "id": 396,
+        "name": "Mistralton Cave"
+    },
+    {
+        "id": 397,
+        "name": "Rumination Field"
+    },
+    {
+        "id": 398,
+        "name": "Celestial Tower"
+    },
+    {
+        "id": 399,
+        "name": "Moor of Icirrus"
+    },
+    {
+        "id": 400,
+        "name": "Shopping Mall"
+    },
+    {
+        "id": 401,
+        "name": "Challenger's Cave"
+    },
+    {
+        "id": 402,
+        "name": "Pok\u00e9 Transfer Lab"
+    },
+    {
+        "id": 403,
+        "name": "Giant Chasm"
+    },
+    {
+        "id": 404,
+        "name": "Liberty Garden"
+    },
+    {
+        "id": 405,
+        "name": "P2 Laboratory"
+    },
+    {
+        "id": 406,
+        "name": "Skyarrow Bridge"
+    },
+    {
+        "id": 407,
+        "name": "Driftveil Drawbridge"
+    },
+    {
+        "id": 408,
+        "name": "Tubeline Bridge"
+    },
+    {
+        "id": 409,
+        "name": "Village Bridge"
+    },
+    {
+        "id": 410,
+        "name": "Marvelous Bridge"
+    },
+    {
+        "id": 411,
+        "name": "Entralink"
+    },
+    {
+        "id": 412,
+        "name": "Abundant Shrine"
+    },
+    {
+        "id": 413,
+        "name": "Undella Bay"
+    },
+    {
+        "id": 414,
+        "name": "Lostlorn Forest"
+    },
+    {
+        "id": 415,
+        "name": "Trial Chamber"
+    },
+    {
+        "id": 416,
+        "name": "Guidance Chamber"
+    },
+    {
+        "id": 417,
+        "name": "Entree Forest"
+    },
+    {
+        "id": 418,
+        "name": "Accumula Gate"
+    },
+    {
+        "id": 419,
+        "name": "Undella Gate"
+    },
+    {
+        "id": 420,
+        "name": "Nacrene Gate"
+    },
+    {
+        "id": 421,
+        "name": "Castelia Gate"
+    },
+    {
+        "id": 422,
+        "name": "Nimbasa Gate"
+    },
+    {
+        "id": 423,
+        "name": "Opelucid Gate"
+    },
+    {
+        "id": 424,
+        "name": "Black Gate"
+    },
+    {
+        "id": 425,
+        "name": "White Gate"
+    },
+    {
+        "id": 426,
+        "name": "Bridge Gate"
+    },
+    {
+        "id": 427,
+        "name": "Route Gate"
+    },
+    {
+        "id": 428,
+        "name": "Abyssal Ruins"
+    },
+    {
+        "id": 429,
+        "name": "Petalburg City"
+    },
+    {
+        "id": 430,
+        "name": "Slateport City"
+    },
+    {
+        "id": 431,
+        "name": "Lilycove City"
+    },
+    {
+        "id": 432,
+        "name": "Mossdeep City"
+    },
+    {
+        "id": 433,
+        "name": "Sootopolis City"
+    },
+    {
+        "id": 434,
+        "name": "Ever Grande City"
+    },
+    {
+        "id": 435,
+        "name": "Meteor Falls"
+    },
+    {
+        "id": 436,
+        "name": "Rusturf Tunnel"
+    },
+    {
+        "id": 437,
+        "name": "Granite Cave"
+    },
+    {
+        "id": 438,
+        "name": "Petalburg Woods"
+    },
+    {
+        "id": 439,
+        "name": "Jagged Pass"
+    },
+    {
+        "id": 440,
+        "name": "Fiery Path"
+    },
+    {
+        "id": 441,
+        "name": "Mt. Pyre"
+    },
+    {
+        "id": 442,
+        "name": "Seafloor Cavern"
+    },
+    {
+        "id": 443,
+        "name": "Cave of Origin"
+    },
+    {
+        "id": 444,
+        "name": "Victory Road"
+    },
+    {
+        "id": 445,
+        "name": "Shoal Cave"
+    },
+    {
+        "id": 446,
+        "name": "New Mauville"
+    },
+    {
+        "id": 447,
+        "name": "Abandoned Ship"
+    },
+    {
+        "id": 448,
+        "name": "Sky Pillar"
+    },
+    {
+        "id": 449,
+        "name": "Route 101"
+    },
+    {
+        "id": 450,
+        "name": "Route 102"
+    },
+    {
+        "id": 451,
+        "name": "Route 103"
+    },
+    {
+        "id": 452,
+        "name": "Route 104"
+    },
+    {
+        "id": 453,
+        "name": "Route 105"
+    },
+    {
+        "id": 454,
+        "name": "Route 106"
+    },
+    {
+        "id": 455,
+        "name": "Route 107"
+    },
+    {
+        "id": 456,
+        "name": "Route 108"
+    },
+    {
+        "id": 457,
+        "name": "Route 109"
+    },
+    {
+        "id": 458,
+        "name": "Route 110"
+    },
+    {
+        "id": 459,
+        "name": "Route 111"
+    },
+    {
+        "id": 460,
+        "name": "Route 112"
+    },
+    {
+        "id": 461,
+        "name": "Route 113"
+    },
+    {
+        "id": 462,
+        "name": "Route 114"
+    },
+    {
+        "id": 463,
+        "name": "Route 115"
+    },
+    {
+        "id": 464,
+        "name": "Route 116"
+    },
+    {
+        "id": 465,
+        "name": "Route 117"
+    },
+    {
+        "id": 466,
+        "name": "Route 118"
+    },
+    {
+        "id": 467,
+        "name": "Route 119"
+    },
+    {
+        "id": 468,
+        "name": "Route 120"
+    },
+    {
+        "id": 469,
+        "name": "Route 121"
+    },
+    {
+        "id": 470,
+        "name": "Route 122"
+    },
+    {
+        "id": 471,
+        "name": "Route 123"
+    },
+    {
+        "id": 472,
+        "name": "Route 124"
+    },
+    {
+        "id": 473,
+        "name": "Route 125"
+    },
+    {
+        "id": 474,
+        "name": "Route 126"
+    },
+    {
+        "id": 475,
+        "name": "Route 127"
+    },
+    {
+        "id": 476,
+        "name": "Route 128"
+    },
+    {
+        "id": 477,
+        "name": "Route 129"
+    },
+    {
+        "id": 478,
+        "name": "Route 130"
+    },
+    {
+        "id": 479,
+        "name": "Route 131"
+    },
+    {
+        "id": 480,
+        "name": "Route 132"
+    },
+    {
+        "id": 481,
+        "name": "Route 133"
+    },
+    {
+        "id": 482,
+        "name": "Route 134"
+    },
+    {
+        "id": 483,
+        "name": "Safari Zone"
+    },
+    {
+        "id": 484,
+        "name": "Dewford Town"
+    },
+    {
+        "id": 485,
+        "name": "Pacifidlog Town"
+    },
+    {
+        "id": 486,
+        "name": "Magma Hideout"
+    },
+    {
+        "id": 487,
+        "name": "Mirage Tower"
+    },
+    {
+        "id": 488,
+        "name": "Desert Underpass"
+    },
+    {
+        "id": 489,
+        "name": "Artisan Cave"
+    },
+    {
+        "id": 490,
+        "name": "Altering Cave"
+    },
+    {
+        "id": 491,
+        "name": "Monean Chamber"
+    },
+    {
+        "id": 492,
+        "name": "Liptoo Chamber"
+    },
+    {
+        "id": 493,
+        "name": "Weepth Chamber"
+    },
+    {
+        "id": 494,
+        "name": "Dilford Chamber"
+    },
+    {
+        "id": 495,
+        "name": "Scufib Chamber"
+    },
+    {
+        "id": 496,
+        "name": "Rixy Chamber"
+    },
+    {
+        "id": 497,
+        "name": "Viapos Chamber"
+    },
+    {
+        "id": 498,
+        "name": "S.S. Anne"
+    },
+    {
+        "id": 500,
+        "name": "Mt. Ember"
+    },
+    {
+        "id": 501,
+        "name": "Berry Forest"
+    },
+    {
+        "id": 502,
+        "name": "Icefall Cave"
+    },
+    {
+        "id": 503,
+        "name": "Pattern Bush"
+    },
+    {
+        "id": 504,
+        "name": "Lost Cave"
+    },
+    {
+        "id": 505,
+        "name": "Kindle Road"
+    },
+    {
+        "id": 506,
+        "name": "Treasure Beach"
+    },
+    {
+        "id": 507,
+        "name": "Cape Brink"
+    },
+    {
+        "id": 508,
+        "name": "Bond Bridge"
+    },
+    {
+        "id": 509,
+        "name": "Three Isle Port"
+    },
+    {
+        "id": 510,
+        "name": "Resort Gorgeous"
+    },
+    {
+        "id": 511,
+        "name": "Water Labyrinth"
+    },
+    {
+        "id": 512,
+        "name": "Five Isle Meadow"
+    },
+    {
+        "id": 513,
+        "name": "Memorial Pillar"
+    },
+    {
+        "id": 514,
+        "name": "Outcast Island"
+    },
+    {
+        "id": 515,
+        "name": "Green Path"
+    },
+    {
+        "id": 516,
+        "name": "Water Path"
+    },
+    {
+        "id": 517,
+        "name": "Ruin Valley"
+    },
+    {
+        "id": 518,
+        "name": "Trainer Tower"
+    },
+    {
+        "id": 519,
+        "name": "Canyon Entrance"
+    },
+    {
+        "id": 520,
+        "name": "Sevault Canyon"
+    },
+    {
+        "id": 521,
+        "name": "Tanoby Ruins"
+    },
+    {
+        "id": 526,
+        "name": "One Island"
+    },
+    {
+        "id": 527,
+        "name": "Four Island"
+    },
+    {
+        "id": 528,
+        "name": "Five Island"
+    },
+    {
+        "id": 529,
+        "name": "Altering Cave"
+    },
+    {
+        "id": 531,
+        "name": "Aspertia City"
+    },
+    {
+        "id": 532,
+        "name": "Virbank City"
+    },
+    {
+        "id": 533,
+        "name": "Humilau City"
+    },
+    {
+        "id": 534,
+        "name": "Pok\u00e9Star Studios"
+    },
+    {
+        "id": 535,
+        "name": "Join Avenue"
+    },
+    {
+        "id": 536,
+        "name": "Floccesy Town"
+    },
+    {
+        "id": 537,
+        "name": "Lentimas Town"
+    },
+    {
+        "id": 538,
+        "name": "Route 19"
+    },
+    {
+        "id": 539,
+        "name": "Route 20"
+    },
+    {
+        "id": 540,
+        "name": "Route 21"
+    },
+    {
+        "id": 541,
+        "name": "Route 22"
+    },
+    {
+        "id": 542,
+        "name": "Route 23"
+    },
+    {
+        "id": 543,
+        "name": "Castelia Sewers"
+    },
+    {
+        "id": 544,
+        "name": "Floccesy Ranch"
+    },
+    {
+        "id": 545,
+        "name": "Virbank Complex"
+    },
+    {
+        "id": 546,
+        "name": "Reversal Mountain"
+    },
+    {
+        "id": 547,
+        "name": "Strange House"
+    },
+    {
+        "id": 548,
+        "name": "Victory Road"
+    },
+    {
+        "id": 549,
+        "name": "Plasma Frigate"
+    },
+    {
+        "id": 550,
+        "name": "Relic Passage"
+    },
+    {
+        "id": 551,
+        "name": "Clay Tunnel"
+    },
+    {
+        "id": 552,
+        "name": "White Treehollow"
+    },
+    {
+        "id": 553,
+        "name": "Black Tower"
+    },
+    {
+        "id": 554,
+        "name": "Seaside Cave"
+    },
+    {
+        "id": 555,
+        "name": "Cave of Being"
+    },
+    {
+        "id": 556,
+        "name": "Hidden Grotto"
+    },
+    {
+        "id": 557,
+        "name": "Marine Tube"
+    },
+    {
+        "id": 558,
+        "name": "Virbank Gate"
+    },
+    {
+        "id": 559,
+        "name": "Aspertia Gate"
+    },
+    {
+        "id": 560,
+        "name": "Nature Sanctuary"
+    },
+    {
+        "id": 561,
+        "name": "Medal Secretariat"
+    },
+    {
+        "id": 562,
+        "name": "Underground Ruins"
+    },
+    {
+        "id": 563,
+        "name": "Rocky Mountain Room"
+    },
+    {
+        "id": 564,
+        "name": "Glacier Room"
+    },
+    {
+        "id": 565,
+        "name": "Iron Room"
+    },
+    {
+        "id": 566,
+        "name": "Pledge Grove"
+    },
+    {
+        "id": 567,
+        "name": "Littleroot Town"
+    },
+    {
+        "id": 568,
+        "name": "Oldale Town"
+    },
+    {
+        "id": 569,
+        "name": "Lavaridge Town"
+    },
+    {
+        "id": 570,
+        "name": "Fallarbor Town"
+    },
+    {
+        "id": 571,
+        "name": "Verdanturf Town"
+    },
+    {
+        "id": 572,
+        "name": "Mauville City"
+    },
+    {
+        "id": 573,
+        "name": "Rustboro City"
+    },
+    {
+        "id": 574,
+        "name": "Fortree City"
+    },
+    {
+        "id": 575,
+        "name": "Underwater"
+    },
+    {
+        "id": 576,
+        "name": "Mt. Chimney"
+    },
+    {
+        "id": 577,
+        "name": "Mirage Island"
+    },
+    {
+        "id": 578,
+        "name": "Southern Island"
+    },
+    {
+        "id": 579,
+        "name": "Sealed Chamber"
+    },
+    {
+        "id": 580,
+        "name": "Scorched Slab"
+    },
+    {
+        "id": 581,
+        "name": "Island Cave"
+    },
+    {
+        "id": 582,
+        "name": "Desert Ruins"
+    },
+    {
+        "id": 583,
+        "name": "Ancient Tomb"
+    },
+    {
+        "id": 584,
+        "name": "???"
+    },
+    {
+        "id": 585,
+        "name": "Secret Base"
+    },
+    {
+        "id": 586,
+        "name": "Battle Tower"
+    },
+    {
+        "id": 587,
+        "name": "Vaniville Town"
+    },
+    {
+        "id": 588,
+        "name": "Route 1"
+    },
+    {
+        "id": 589,
+        "name": "Vaniville Pathway"
+    },
+    {
+        "id": 590,
+        "name": "Aquacorde Town"
+    },
+    {
+        "id": 591,
+        "name": "Route 2"
+    },
+    {
+        "id": 592,
+        "name": "Avance Trail"
+    },
+    {
+        "id": 593,
+        "name": "Santalune Forest"
+    },
+    {
+        "id": 594,
+        "name": "Route 3"
+    },
+    {
+        "id": 595,
+        "name": "Ouvert Way"
+    },
+    {
+        "id": 596,
+        "name": "Santalune City"
+    },
+    {
+        "id": 597,
+        "name": "Route 4"
+    },
+    {
+        "id": 598,
+        "name": "Parterre Way"
+    },
+    {
+        "id": 599,
+        "name": "Lumiose City"
+    },
+    {
+        "id": 600,
+        "name": "Prism Tower"
+    },
+    {
+        "id": 601,
+        "name": "Lysandre Labs"
+    },
+    {
+        "id": 602,
+        "name": "Route 5"
+    },
+    {
+        "id": 603,
+        "name": "Versant Road"
+    },
+    {
+        "id": 604,
+        "name": "Camphrier Town"
+    },
+    {
+        "id": 605,
+        "name": "Shabboneau Castle"
+    },
+    {
+        "id": 606,
+        "name": "Route 6"
+    },
+    {
+        "id": 607,
+        "name": "Palais Lane"
+    },
+    {
+        "id": 608,
+        "name": "Parfum Palace"
+    },
+    {
+        "id": 609,
+        "name": "Route 7"
+    },
+    {
+        "id": 610,
+        "name": "Rivi\u00e8re Walk"
+    },
+    {
+        "id": 611,
+        "name": "Cyllage City"
+    },
+    {
+        "id": 612,
+        "name": "Route 8"
+    },
+    {
+        "id": 613,
+        "name": "Muraille Coast"
+    },
+    {
+        "id": 614,
+        "name": "Ambrette Town"
+    },
+    {
+        "id": 615,
+        "name": "Route 9"
+    },
+    {
+        "id": 616,
+        "name": "Spikes Passage"
+    },
+    {
+        "id": 617,
+        "name": "Battle Chateau"
+    },
+    {
+        "id": 618,
+        "name": "Route 10"
+    },
+    {
+        "id": 619,
+        "name": "Menhir Trail"
+    },
+    {
+        "id": 620,
+        "name": "Geosenge Town"
+    },
+    {
+        "id": 621,
+        "name": "Route 11"
+    },
+    {
+        "id": 622,
+        "name": "Miroir Way"
+    },
+    {
+        "id": 623,
+        "name": "Reflection Cave"
+    },
+    {
+        "id": 624,
+        "name": "Shalour City"
+    },
+    {
+        "id": 625,
+        "name": "Tower of Mastery"
+    },
+    {
+        "id": 626,
+        "name": "Route 12"
+    },
+    {
+        "id": 627,
+        "name": "Fourrage Road"
+    },
+    {
+        "id": 628,
+        "name": "Coumarine City"
+    },
+    {
+        "id": 629,
+        "name": "Route 13"
+    },
+    {
+        "id": 630,
+        "name": "Lumiose Badlands"
+    },
+    {
+        "id": 631,
+        "name": "Route 14"
+    },
+    {
+        "id": 632,
+        "name": "Laverre Nature Trail"
+    },
+    {
+        "id": 633,
+        "name": "Laverre City"
+    },
+    {
+        "id": 634,
+        "name": "Pok\u00e9 Ball Factory"
+    },
+    {
+        "id": 635,
+        "name": "Route 15"
+    },
+    {
+        "id": 636,
+        "name": "Brun Way"
+    },
+    {
+        "id": 637,
+        "name": "Dendemille Town"
+    },
+    {
+        "id": 638,
+        "name": "Route 16"
+    },
+    {
+        "id": 639,
+        "name": "M\u00e9lancolie Path"
+    },
+    {
+        "id": 640,
+        "name": "Frost Cavern"
+    },
+    {
+        "id": 641,
+        "name": "Route 17"
+    },
+    {
+        "id": 642,
+        "name": "Mamoswine Road"
+    },
+    {
+        "id": 643,
+        "name": "Anistar City"
+    },
+    {
+        "id": 644,
+        "name": "Route 18"
+    },
+    {
+        "id": 645,
+        "name": "Vall\u00e9e \u00c9troite Way"
+    },
+    {
+        "id": 646,
+        "name": "Couriway Town"
+    },
+    {
+        "id": 647,
+        "name": "Route 19"
+    },
+    {
+        "id": 648,
+        "name": "Grande Vall\u00e9e Way"
+    },
+    {
+        "id": 649,
+        "name": "Snowbelle City"
+    },
+    {
+        "id": 650,
+        "name": "Route 20"
+    },
+    {
+        "id": 651,
+        "name": "Winding Woods"
+    },
+    {
+        "id": 652,
+        "name": "Pok\u00e9mon Village"
+    },
+    {
+        "id": 653,
+        "name": "Route 21"
+    },
+    {
+        "id": 654,
+        "name": "Derni\u00e8re Way"
+    },
+    {
+        "id": 655,
+        "name": "Route 22"
+    },
+    {
+        "id": 656,
+        "name": "D\u00e9tourner Way"
+    },
+    {
+        "id": 657,
+        "name": "Victory Road"
+    },
+    {
+        "id": 658,
+        "name": "Pok\u00e9mon League"
+    },
+    {
+        "id": 659,
+        "name": "Kiloude City"
+    },
+    {
+        "id": 660,
+        "name": "Battle Maison"
+    },
+    {
+        "id": 661,
+        "name": "Azure Bay"
+    },
+    {
+        "id": 662,
+        "name": "Dendemille Gate"
+    },
+    {
+        "id": 663,
+        "name": "Couriway Gate"
+    },
+    {
+        "id": 664,
+        "name": "Ambrette Gate"
+    },
+    {
+        "id": 665,
+        "name": "Lumiose Gate"
+    },
+    {
+        "id": 666,
+        "name": "Shalour Gate"
+    },
+    {
+        "id": 667,
+        "name": "Coumarine Gate"
+    },
+    {
+        "id": 668,
+        "name": "Laverre Gate"
+    },
+    {
+        "id": 669,
+        "name": "Anistar Gate"
+    },
+    {
+        "id": 670,
+        "name": "Snowbelle Gate"
+    },
+    {
+        "id": 671,
+        "name": "Glittering Cave"
+    },
+    {
+        "id": 672,
+        "name": "Connecting Cave"
+    },
+    {
+        "id": 673,
+        "name": "Zubat Roost"
+    },
+    {
+        "id": 674,
+        "name": "Kalos Power Plant"
+    },
+    {
+        "id": 675,
+        "name": "Team Flare Secret HQ"
+    },
+    {
+        "id": 676,
+        "name": "Terminus Cave"
+    },
+    {
+        "id": 677,
+        "name": "Lost Hotel"
+    },
+    {
+        "id": 678,
+        "name": "Chamber of Emptiness"
+    },
+    {
+        "id": 679,
+        "name": "Sea Spirit\u2019s Den"
+    },
+    {
+        "id": 680,
+        "name": "Friend Safari"
+    },
+    {
+        "id": 681,
+        "name": "Blazing Chamber"
+    },
+    {
+        "id": 682,
+        "name": "Flood Chamber"
+    },
+    {
+        "id": 683,
+        "name": "Ironworks Chamber"
+    },
+    {
+        "id": 684,
+        "name": "Dragonmark Chamber"
+    },
+    {
+        "id": 685,
+        "name": "Radiant Chamber"
+    },
+    {
+        "id": 686,
+        "name": "Pok\u00e9mon League Gate"
+    },
+    {
+        "id": 687,
+        "name": "Lumiose Station"
+    },
+    {
+        "id": 688,
+        "name": "Kiloude Station"
+    },
+    {
+        "id": 689,
+        "name": "Ambrette Aquarium"
+    },
+    {
+        "id": 690,
+        "name": "Unknown Dungeon"
+    },
+    {
+        "id": 691,
+        "name": "Pok\u00e9mon League"
+    },
+    {
+        "id": 692,
+        "name": "Team Aqua Hideout"
+    },
+    {
+        "id": 693,
+        "name": "Sea Mauville"
+    },
+    {
+        "id": 694,
+        "name": "Team Magma Hideout"
+    },
+    {
+        "id": 695,
+        "name": "Battle Resort"
+    },
+    {
+        "id": 696,
+        "name": "S.S. Tidal"
+    },
+    {
+        "id": 697,
+        "name": "Mirage Forest"
+    },
+    {
+        "id": 698,
+        "name": "Mirage Cave"
+    },
+    {
+        "id": 699,
+        "name": "Mirage Mountain"
+    },
+    {
+        "id": 700,
+        "name": "Trackless Forest"
+    },
+    {
+        "id": 701,
+        "name": "Pathless Plain"
+    },
+    {
+        "id": 702,
+        "name": "Nameless Cavern"
+    },
+    {
+        "id": 703,
+        "name": "Fabled Cave"
+    },
+    {
+        "id": 704,
+        "name": "Gnarled Den"
+    },
+    {
+        "id": 705,
+        "name": "Crescent Isle"
+    },
+    {
+        "id": 706,
+        "name": "Secret Islet"
+    },
+    {
+        "id": 707,
+        "name": "Soaring in the sky"
+    },
+    {
+        "id": 708,
+        "name": "Secret Shore"
+    },
+    {
+        "id": 709,
+        "name": "Secret Meadow"
+    },
+    {
+        "id": 710,
+        "name": "Route 1"
+    },
+    {
+        "id": 711,
+        "name": "Route 1"
+    },
+    {
+        "id": 712,
+        "name": "Route 3"
+    },
+    {
+        "id": 713,
+        "name": "Route 2"
+    },
+    {
+        "id": 714,
+        "name": "Kala\u2019e Bay"
+    },
+    {
+        "id": 715,
+        "name": "Melemele Sea"
+    },
+    {
+        "id": 716,
+        "name": "Hau\u2019oli City"
+    },
+    {
+        "id": 717,
+        "name": "Hau\u2019oli City"
+    },
+    {
+        "id": 718,
+        "name": "Hau\u2019oli City"
+    },
+    {
+        "id": 719,
+        "name": "Iki Town"
+    },
+    {
+        "id": 720,
+        "name": "Mahalo Trail"
+    },
+    {
+        "id": 721,
+        "name": "Mahalo Trail"
+    },
+    {
+        "id": 722,
+        "name": "Ruins of Conflict"
+    },
+    {
+        "id": 723,
+        "name": "Ten Carat Hill"
+    },
+    {
+        "id": 724,
+        "name": "Ten Carat Hill"
+    },
+    {
+        "id": 725,
+        "name": "Hau\u2019oli Cemetery"
+    },
+    {
+        "id": 726,
+        "name": "Melemele Meadow"
+    },
+    {
+        "id": 727,
+        "name": "Seaward Cave"
+    },
+    {
+        "id": 728,
+        "name": "Berry Fields"
+    },
+    {
+        "id": 729,
+        "name": "Verdant Cavern"
+    },
+    {
+        "id": 730,
+        "name": "Verdant Cavern"
+    },
+    {
+        "id": 731,
+        "name": "Route 4"
+    },
+    {
+        "id": 732,
+        "name": "Route 5"
+    },
+    {
+        "id": 733,
+        "name": "Route 6"
+    },
+    {
+        "id": 734,
+        "name": "Route 7"
+    },
+    {
+        "id": 735,
+        "name": "Route 8"
+    },
+    {
+        "id": 736,
+        "name": "Route 9"
+    },
+    {
+        "id": 737,
+        "name": "Hano Grand Resort"
+    },
+    {
+        "id": 738,
+        "name": "Hano Beach"
+    },
+    {
+        "id": 739,
+        "name": "Akala Meadow"
+    },
+    {
+        "id": 740,
+        "name": "Paniola Town"
+    },
+    {
+        "id": 741,
+        "name": "Heahea City"
+    },
+    {
+        "id": 742,
+        "name": "Konikoni City"
+    },
+    {
+        "id": 743,
+        "name": "Royal Avenue"
+    },
+    {
+        "id": 744,
+        "name": "Memorial Hill"
+    },
+    {
+        "id": 745,
+        "name": "Paniola Ranch"
+    },
+    {
+        "id": 746,
+        "name": "Wela Volcano Park"
+    },
+    {
+        "id": 747,
+        "name": "Wela Volcano Park"
+    },
+    {
+        "id": 748,
+        "name": "Brooklet Hill"
+    },
+    {
+        "id": 749,
+        "name": "Brooklet Hill"
+    },
+    {
+        "id": 750,
+        "name": "Lush Jungle"
+    },
+    {
+        "id": 751,
+        "name": "Ruins of Life"
+    },
+    {
+        "id": 752,
+        "name": "Akala Outskirts"
+    },
+    {
+        "id": 753,
+        "name": "Diglett\u2019s Tunnel"
+    },
+    {
+        "id": 754,
+        "name": "Battle Royal Dome"
+    },
+    {
+        "id": 755,
+        "name": "Route 10"
+    },
+    {
+        "id": 756,
+        "name": "Route 11"
+    },
+    {
+        "id": 757,
+        "name": "Secluded Shore"
+    },
+    {
+        "id": 758,
+        "name": "Route 13"
+    },
+    {
+        "id": 759,
+        "name": "Tapu Village"
+    },
+    {
+        "id": 760,
+        "name": "Route 15"
+    },
+    {
+        "id": 761,
+        "name": "Route 16"
+    },
+    {
+        "id": 762,
+        "name": "Route 17"
+    },
+    {
+        "id": 763,
+        "name": "Route 12"
+    },
+    {
+        "id": 764,
+        "name": "Haina Desert"
+    },
+    {
+        "id": 765,
+        "name": "Route 14"
+    },
+    {
+        "id": 766,
+        "name": "Ula\u2019ula Meadow"
+    },
+    {
+        "id": 767,
+        "name": "Po Town"
+    },
+    {
+        "id": 768,
+        "name": "Malie City"
+    },
+    {
+        "id": 769,
+        "name": "Malie Garden"
+    },
+    {
+        "id": 770,
+        "name": "Mount Hokulani"
+    },
+    {
+        "id": 771,
+        "name": "Blush Mountain"
+    },
+    {
+        "id": 772,
+        "name": "Ruins of Abundance"
+    },
+    {
+        "id": 773,
+        "name": "Lake of the Sunne"
+    },
+    {
+        "id": 774,
+        "name": "Lake of the Moone"
+    },
+    {
+        "id": 775,
+        "name": "Mount Lanakila"
+    },
+    {
+        "id": 776,
+        "name": "Shady House"
+    },
+    {
+        "id": 777,
+        "name": "Thrifty Megamart"
+    },
+    {
+        "id": 778,
+        "name": "Hokulani Observatory"
+    },
+    {
+        "id": 779,
+        "name": "Pok\u00e9mon League"
+    },
+    {
+        "id": 780,
+        "name": "Poni Meadow"
+    },
+    {
+        "id": 781,
+        "name": "Poni Wilds"
+    },
+    {
+        "id": 782,
+        "name": "Ancient Poni Path"
+    },
+    {
+        "id": 783,
+        "name": "Poni Breaker Coast"
+    },
+    {
+        "id": 784,
+        "name": "Poni Grove"
+    },
+    {
+        "id": 785,
+        "name": "Poni Plains"
+    },
+    {
+        "id": 786,
+        "name": "Poni Coast"
+    },
+    {
+        "id": 787,
+        "name": "Poni Gauntlet"
+    },
+    {
+        "id": 788,
+        "name": "Seafolk Village"
+    },
+    {
+        "id": 789,
+        "name": "Vast Poni Canyon"
+    },
+    {
+        "id": 790,
+        "name": "Altar of the Sunne"
+    },
+    {
+        "id": 791,
+        "name": "Altar of the Moone"
+    },
+    {
+        "id": 792,
+        "name": "Ruins of Hope"
+    },
+    {
+        "id": 793,
+        "name": "Resolution Cave"
+    },
+    {
+        "id": 794,
+        "name": "Exeggutor Island"
+    },
+    {
+        "id": 795,
+        "name": "Battle Tree"
+    },
+    {
+        "id": 796,
+        "name": "Aether Paradise"
+    },
+    {
+        "id": 797,
+        "name": "Ultra Space"
+    },
+    {
+        "id": 798,
+        "name": "Malie City"
+    },
+    {
+        "id": 799,
+        "name": "Roaming Kanto"
+    },
+    {
+        "id": 800,
+        "name": "Roaming Johto"
+    },
+    {
+        "id": 801,
+        "name": "Roaming Hoenn"
+    },
+    {
+        "id": 802,
+        "name": "Roaming Sinnoh"
+    },
+    {
+        "id": 803,
+        "name": "Terra Cave"
+    },
+    {
+        "id": 804,
+        "name": "Marine Cave"
+    },
+    {
+        "id": 805,
+        "name": "Two Island"
+    },
+    {
+        "id": 806,
+        "name": "Three Island"
+    },
+    {
+        "id": 807
+    },
+    {
+        "id": 808,
+        "name": "Six Island"
+    },
+    {
+        "id": 809,
+        "name": "Seven Island"
+    },
+    {
+        "id": 810,
+        "name": "Birth Island"
+    },
+    {
+        "id": 811,
+        "name": "Navel Rock"
+    },
+    {
+        "id": 812,
+        "name": "Faraway Island"
+    },
+    {
+        "id": 813,
+        "name": "Hoenn Battle Frontier"
+    }
+]
