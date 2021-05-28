@@ -86,7 +86,7 @@
         document.getElementById('dropfile').addEventListener('drop', (evt) => {
           evt.preventDefault()
           var files = evt.dataTransfer.files;
-          console.log(files)
+          //console.log(files)
           loadWord(files, '#svgimage', 0);
         })
       }
@@ -101,11 +101,11 @@
             var circlePathd;
             if (option == 0) {
               circlePathd = convertor(newPathd)
-              console.log("0, OK!");
+             // console.log("0, OK!");
             }
             else {
               circlePathd = convertor2(newPathd)
-              console.log("1, OK!");
+            //  console.log("1, OK!");
             }
 
             svgpanel
@@ -118,7 +118,7 @@
 
               svgpanel
               .on('click', (evt) => {
-                console.log('a')
+              //  console.log('a')
                 svgpanel
                   .select('path')
                   .transition()

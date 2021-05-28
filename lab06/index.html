@@ -168,7 +168,7 @@
 
 	d3.csv("https://raw.githubusercontent.com/4evernaive/vis2021s/master/lab06/data.csv", function (data) {
 		var languagesData = data.map(function (row, rowIndex) {
-			console.log(row)
+			//console.log(row)
 			row['id'] = rowIndex; // add id
 			return row; // update row
 		});
@@ -254,7 +254,7 @@
 
 		var rect = groups.selectAll('rect')
 			.data(function (d) {
-				console.log(d)
+				//(d)
 				return d;
 			})
 			.enter()
