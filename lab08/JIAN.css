@@ -135,7 +135,7 @@
 @keyframes dash3-9 {
     0%,
     80% {
-            stroke-dashoffset: 208;
+            stroke-dashoffset: 66;
 }
     90% {
             stroke-dashoffset: 0;
