@@ -1,0 +1,158 @@
+#path919{
+    stroke-width: 20;
+    clip-path: url("#cp3");
+    stroke-dasharray: 127;
+    animation: dash3-1 5s linear forwards;
+}
+@keyframes dash3-1 {
+    0% {
+            stroke-dashoffset: 127;
+}
+    10% {
+            stroke-dashoffset: 0;
+    }
+}
+
+#path921 {
+    stroke-width: 20;
+    clip-path: url("#cp3");
+    stroke-dasharray: 186;
+    animation: dash3-2 5s linear forwards;
+}
+@keyframes dash3-2 {
+    0%,
+    10% {
+            stroke-dashoffset: 186;
+}
+    20% {
+            stroke-dashoffset: 0;
+    }
+}
+
+#path923 {
+    stroke-width: 12;
+    clip-path: url("#cp3");
+    stroke-dasharray: 203;
+    animation: dash3-3 5s linear forwards;
+}
+@keyframes dash3-3 {
+    0%,
+    20% {
+            stroke-dashoffset: 203;
+}
+    30% {
+            stroke-dashoffset: 0;
+    }
+} 
+
+#path925 {
+    stroke-width: 12;
+    clip-path: url("#cp3");
+    stroke-dasharray: 198;
+    animation: dash3-4 5s linear forwards;
+}
+@keyframes dash3-4 {
+    0%,
+    30% {
+            stroke-dashoffset: 198;
+}
+    40% {
+            stroke-dashoffset: 0;
+    }
+}
+
+#path927 {
+    stroke-width: 12;
+    clip-path: url("#cp3");
+    stroke-dasharray: 146;
+    animation: dash3-5 5s linear forwards;
+}
+@keyframes dash3-5 {
+    0%,
+    40% {
+            stroke-dashoffset: 146;
+}
+    50% {
+            stroke-dashoffset: 0;
+    }
+}
+
+#path929 {
+    stroke-width: 12;
+    clip-path: url("#cp3");
+    stroke-dasharray: 139;
+    animation: dash3-6 5s linear forwards;
+}
+@keyframes dash3-6 {
+    0%,
+    50% {
+            stroke-dashoffset: 139;
+}
+    60% {
+            stroke-dashoffset: 0;
+    }
+}
+
+#path931 {
+    stroke-width: 12;
+    clip-path: url("#cp3");
+    stroke-dasharray: 62;
+    animation: dash3-7 5s linear forwards;
+}
+@keyframes dash3-7 {
+    0%,
+    60% {
+            stroke-dashoffset: 62;
+}
+    70% {
+            stroke-dashoffset: 0;
+    }
+}
+
+#path933 {
+    stroke-width: 12;
+    clip-path: url("#cp3");
+    stroke-dasharray: 208;
+    animation: dash3-8 5s linear forwards;
+}
+@keyframes dash3-8 {
+    0%,
+    70% {
+            stroke-dashoffset: 208;
+}
+    80% {
+            stroke-dashoffset: 0;
+    }
+}
+
+
+#path935 {
+    stroke-width: 12;
+    clip-path: url("#cp3");
+    stroke-dasharray: 66;
+    animation: dash3-9 5s linear forwards;
+}
+@keyframes dash3-9 {
+    0%,
+    80% {
+            stroke-dashoffset: 208;
+}
+    90% {
+            stroke-dashoffset: 0;
+    }
+}
+#path937 {
+    stroke-width: 12;
+    clip-path: url("#cp3");
+    stroke-dasharray: 119;
+    animation: dash3-10 5s linear forwards;
+}
+@keyframes dash3-10 {
+    0%,
+    90% {
+            stroke-dashoffset: 119;
+}
+    100% {
+            stroke-dashoffset: 0;
+    }
+}

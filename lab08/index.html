@@ -1,71 +1,259 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
+
 <head>
-    <meta charset="utf-8">
-    <title>Lab 8</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&display=swap');
+  <meta charset="utf-8">
+  <title>Lab 8</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@900&display=swap');
 
-        h1, div {
-          background-color: rgba(255, 255, 0, 0.1);
-          font-family: 'Noto Serif JP', serif;
-          font-size: 24pt;
-          border: solid 1px black;
-          width: 90%;
-          margin: 5px auto;
-          padding: 10px;
-        }
+    h1,
+    div {
+      background-color: rgba(255, 255, 0, 0.1);
+      font-family: 'Noto Serif JP', serif;
+      font-size: 24pt;
+      border: solid 1px black;
+      width: 90%;
+      margin: 5px auto;
+      padding: 10px;
+    }
 
-        div {
-          font-size: 12pt;
-        }
-        
-        body {
-            background-color: rgba(255, 128, 255, 0.1);
-        }
+    div {
+      font-size: 12pt;
+    }
 
-        video:hover {
-            box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
-        }
-    </style>
-    <script src="http://d3js.org/d3.v6.min.js" charset="utf-8"></script> <!-- v6.5.0 -->
+    body {
+      background-color: rgba(255, 128, 255, 0.1);
+    }
+
+    video:hover {
+      box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+    }
+  </style>
+  <link rel="stylesheet" href="LI.css">
+  <link rel="stylesheet" href="ZI.css">
+  <link rel="stylesheet" href="JIAN.css">
+  <script src="https://d3js.org/d3.v6.min.js" charset="utf-8"></script> <!-- v6.5.0 -->
 </head>
+
 <body>
-    <h1>
-        lab08 漢字書寫 (鉛筆字) (毛筆字也OK!) Path Animation
-    </h1>
-    <div>
-      限定使用 D3.js，參考以下影片。
-    	<ul>
-    		<li><a href="https://bl.ocks.org/basilesimon/f164aec5758d16d51d248e41af5428e4">Animate path in D3</a></li>
-    		<li><a href="https://codepen.io/MyXoToD/post/howto-self-drawing-svg-animation">"Self-Drawing" SVG</a></li>
-    		<li><a href="https://stackoverflow.com/questions/15275362/how-to-transition-a-path-in-d3-js">How to transition a path in d3.js</a></li>
-        <li><a href="https://css-tricks.com/svg-line-animation-works/">How SVG Line Animation Works</a></li>
-        <li><a href="http://blog.roachking.net/blog/2014/10/31/osolve-team-drawing-animation/">使用 SVG 將圖片做成動畫</a></li>
-        <li><a href="https://www.hesyifei.com/">何一非</a></li>
-    	</ul>
-    </div>
+  <h1>
+    lab08 漢字書寫 (鉛筆字) (毛筆字也OK!) Path Animation
+  </h1>
+  <div>
+    限定使用 D3.js，參考以下影片。
+    <ul>
+      <li><a href="https://bl.ocks.org/basilesimon/f164aec5758d16d51d248e41af5428e4">Animate path in D3</a></li>
+      <li><a href="https://codepen.io/MyXoToD/post/howto-self-drawing-svg-animation">"Self-Drawing" SVG</a></li>
+      <li><a href="https://stackoverflow.com/questions/15275362/how-to-transition-a-path-in-d3-js">How to transition a
+          path in d3.js</a></li>
+      <li><a href="https://css-tricks.com/svg-line-animation-works/">How SVG Line Animation Works</a></li>
+      <li><a href="http://blog.roachking.net/blog/2014/10/31/osolve-team-drawing-animation/">使用 SVG 將圖片做成動畫</a></li>
+      <li><a href="https://www.hesyifei.com/">何一非</a></li>
+    </ul>
+  </div>
 
-    <div>
-  		<video width="400" controls loop autoplay>
-  		  <source src="3.mp4" type="video/mp4">
-  		</video>
-    </div>
+  <div>
+    <video width="400" controls loop autoplay>
+      <source src="3.mp4" type="video/mp4">
+    </video>
+  </div>
 
-    <div>
-      展示區 (姓名)
-      <hr>
-      <img width="256" src="./LI.svg">
-      <img width="256" src="./ZI.svg">
-      <img width="256" src="./JIAN.svg">
-    </div>
+  <div>
+    展示區 (姓名)
+    <hr>
+    <img width="256" src="./LI.svg">
+    <img width="256" src="./ZI.svg">
+    <img width="256" src="./JIAN.svg">
+  </div>
 
-    <div>
-      Drag and Drop 展示區 (接收任何SVG)
-    </div>
+  <div>
+    <svg version="1.1" viewBox="-10 0 266 256" id="svg19" xmlns="http://www.w3.org/2000/svg"
+      xmlns:svg="http://www.w3.org/2000/svg" style="width: 256px;height: 256px; display: inline-block;">
 
-    <script type="text/javascript">
-      // Your beautiful D3 code will go here
-    </script>
-  </html>
-  
+      <clipPath id="lilili">
+        <path fill="currentColor"
+          d="M116 -7q2 2 5 3l6 2q5 4 2 7q-3 0 -1 24q6 -1 19 -3q4 -1 6 -2q4 -1 6 -4q1 -5 9 -2q3 2 9 4h3q3 2 2 4q-1 1 -4 1q-16 -4 -49 6v6q9 7 5 9q-4 3 -6 5q0 4 -1 11t0 10q-4 16 1 24q1 3 -1 5q-2 1 -3 -1q-8 -13 -4 -21q2 -5 2 -24q-41 30 -66 53q-4 3 -5 2t3 -5 q57 -46 67 -62v-10q-4 1 -10 3q-16 3 -23 5q-7 4 -21 0q-5 -1 -1 -2l1 -1q27 -2 54 -10q-1 -25 -7 -35q-4 -4 2 -2zM146 58q51 1 62 16q-1 5 -6 3q-5 -3 -17 -3q-5 1 -5 0q-1 -1 2 -3q1 -1 0 -2q0 -1 -2 -2q-16 -6 -33 -8q-5 0 -1 -1zM147 94q8 3 14 6q4 3 4 4q0 2 -4 5 q-7 4 -24 28q6 1 5 4q0 1 -1 3q0 6 1 10q10 -1 19 -2q15 -2 28 -4q1 -9 10 -6q2 3 9 5q10 3 21 7q2 2 2 4q-1 2 -3 2q-12 -2 -17 -7q-8 -3 -14 -3q-40 5 -55 8q3 30 2 39q-1 8 -8 24q-3 9 -12 8q-22 0 -35 -5q-6 -4 1 -2q24 3 37 -3q19 -17 9 -60q-63 11 -84 17q-9 3 -19 1 q-3 0 -3 -1t3 -2q52 -9 103 -18q-4 -17 -11 -16q-3 0 -3 -1t3 -2q2 -1 7 -1q7 -12 13 -28q0 -4 -1 -5t-5 1q-31 18 -42 28q-5 5 -7 -1q-5 -6 -1 -8q1 0 5 -6q-3 5 2 -2q4 -4 2 1q-2 4 -2 5q1 1 4 -1q13 -7 34 -16q6 -2 6 -7q-1 -6 7 -3z"
+          id="path1795" style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+      </clipPath>
+
+      <path  style="fill:none;stroke:#000000;;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+        d="m 60.813542,42.231205 24.086238,-1.124024 28.58234,-6.422997 49.13592,-11.07967 0.96345,-3.372074 9.95565,3.372074 5.93146,0.752985"
+        id="path2461" />
+      <path  style="fill:none;stroke:#000000;;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+        d="m 110.72847,-10.301393 9.82002,10.2051183 5.96903,2.214318 -2.69569,3.850988 1.05902,31.9631997 6.54668,7.316877 -5.96903,5.102559 -1.82922,23.105927 -1.54039,10.879041 3.46588,16.077875"
+        id="path2463" />
+      <path  style="fill:none;stroke:#000000;;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+        d="M 134.79715,40.435373 79.246645,87.802524 52.193455,110.81218" id="path2465" />
+      <path  style="fill:none;stroke:#000000;;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+        d="m 141.53637,57.957368 42.55342,5.969031 19.06239,10.205118 -11.16786,-2.503142 -8.85728,1.059022"
+        id="path2467" />
+      <path  style="fill:none;stroke:#000000;;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+        d="m 99.36806,110.04198 -7.12433,16.65552 49.48519,-25.22397 0.7702,-5.102558 16.65552,7.220598 -24.93514,33.98497 -5.68021,0.57765 8.27962,3.08079 5.48766,50.92932 -11.26414,31.9632 -23.77985,1.82922 -15.50022,-2.40687"
+        id="path2469" />
+      <path  style="fill:none;stroke:#000000;;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+        d="m 26.411893,174.93832 17.063877,0.80617 89.7533,-17.87004 59.38767,-9.13657 1.61233,-4.29956 18.27313,6.04626 15.04846,6.5837"
+        id="path2471" />
+    </svg>
+    <svg
+    version="1.1"
+    viewBox="-10 0 266 256"
+    id="svg4"
+    sodipodi:docname="ZI_1.svg"
+    inkscape:version="1.1 (c4e8f9e, 2021-05-24)"
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:svg="http://www.w3.org/2000/svg" style="width: 256px;height: 256px; display: inline-block;">
+    <clipPath id="cp2">
+    <path
+      fill="currentColor"
+      d="M155 16q17 2 29 13q1 2 -1 4q-11 2 -21 15t-28 27l12 6q1 1 0 2q-2 2 -1 11q25 -2 41 -3q4 0 6 -1q2 -4 8 -7q1 0 2 -1q5 -3 10 0v1q7 4 22 9q8 4 5 8q-3 6 -5 4q-6 0 -12 -4q-12 -7 -30 -5q-23 2 -46 5q5 99 -20 119q-5 3 -9 1q-8 -5 -27 -9q-16 -4 -31 -12q-3 -1 1 -1 q18 6 52 11q14 4 21 -6q12 -25 5 -102q-75 14 -81 20q-13 7 -25 3q-20 -2 -21 -3q-2 0 -2 -1q1 -1 3 -2q12 0 23 -2q10 -2 28 -6q54 -12 74 -15q-2 -11 -9 -13q-2 0 -6 -2t-7 -4t1 -2q11 0 16 1q14 -18 23 -37q4 -6 2 -9t-9 0q-31 11 -51 21q-16 8 -16 6q-5 -1 -6 -8 q-1 -1 -2 -4q-1 -2 -1 -4q-2 -2 1 -1q4 4 6 8q1 2 8 0l1 -1q5 -1 23 -8q24 -8 32 -11q1 0 2 -1q5 -2 5 -6q1 -4 5 -4z"
+      id="path2"
+      style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+    </clipPath>
+   <path
+       style="fill:none;stroke:#000000;;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+      d="m 73.766203,36.147173 6.60173,16.23376 68.506467,-26.190466 5.73593,-5.519479 16.23376,8.333331 -27.70562,35.064922 -11.21825,14.411301 -12.36031,-2.233791 19.65736,7.297052 2.82947,23.976027 0.7446,67.01375 -4.6165,19.9552 -1.78704,5.3611 -5.65893,10.42436 -9.67977,5.21218 -47.207458,-11.61571"
+      id="path1052" />
+      <path
+      style="fill:none;stroke:#000000;;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+      d="m 1.395636,114.54075 41.491803,6.42831 81.230431,-20.45371 61.06892,-7.012696 20.7459,-5.843916 24.25225,9.350265 14.3176,6.720507"
+      id="path1090" />
+ </svg>
+ 
+ <svg
+   version="1.1"
+   viewBox="-10 0 272 256"
+   id="svg4"
+   sodipodi:docname="JIAN_1.svg"
+   inkscape:version="1.1 (c4e8f9e, 2021-05-24)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"  style="width: 256px;height: 256px; display: inline-block;">
+   <clipPath id="cp3">
+   <path
+     fill="currentColor"
+     d="M85 24q7 10 4 14q-1 2 -9 21q-7 27 -8 48q-3 23 -2 71q-1 11 7 20q6 6 10 19q-2 5 -5 3q-5 -1 -8 -13q-5 -8 -13 -17q-3 -7 6 -11q-1 -36 1 -60q1 -25 4 -55q-20 31 -43 52q-5 4 -1 -2q15 -15 26 -35q1 -2 4 -7q6 -11 16 -26q9 -14 9 -22q-1 -4 2 0zM181 62q-14 2 -22 4 v17q15 -12 22 -21zM186 31q-17 7 -27 9q-1 22 -1 23q4 0 13 -2q6 -1 11 -2q11 -11 15 -24q0 -7 -11 -4zM107 154q16 11 38 23q-2 -6 4 -7q5 2 5 -5v-22v-11q-5 2 -13 4q-5 1 -7 1q-12 4 -19 1q-5 0 0 -1q17 -2 39 -7v-10q1 -7 1 -9q-17 5 -22 3q-4 0 0 -1q3 0 10 -2t12 -3 v-18q-12 4 -20 3q-5 0 0 -1t12 -3q3 0 8 -2v-21q-3 1 -7 2q-6 2 -10 3q-9 2 -18 1q-6 -1 0 -2q9 1 15 -2q3 0 7 -1q5 -2 13 -3v-24q-10 2 -17 0q-5 0 0 -2q10 0 17 -2q0 -19 -1 -23q0 -6 -2 -12q-3 -5 1 -1q8 9 8 11q-3 7 -2 25h4q13 -2 21 -5q9 -4 13 -1q5 6 10 11 q3 4 -2 6q-8 1 -15 12q23 -2 36 -8q5 -3 12 4q2 4 -2 4q-10 0 -30 4q-5 2 -4 1q1 -2 7 -4q3 -1 -1 -1q-12 1 -20 3q-19 18 -30 24h2q2 -1 9 -4q2 0 4 -2l2 -2q2 -2 5 -1q4 2 9 1q2 1 3 3q0 2 -2 2q-12 0 -32 6v18q11 -2 14 -6q0 -1 6 -1q2 1 6 1h5q2 1 2 2q-1 1 -4 1 q-16 2 -29 6v19q12 -2 29 -4q5 0 8 -2q4 -3 10 0q15 8 18 9q3 2 3 4q-1 1 -4 1q-13 -1 -20 -7q-3 -3 -16 -2q-6 0 -20 3q-4 1 -8 1q-1 2 -1 4v33q-1 11 5 17q3 3 27 15q11 3 19 3q19 -1 41 1q3 0 3 1t-2 2q-25 -1 -37 3q-8 2 -24 -7q-5 0 -15 -5q-5 -3 -7 -5q2 5 -3 5 q-6 1 -12 -11l-2 -4q-29 -16 -45 -27h-1q-7 20 -25 37q-5 3 -2 -2q16 -16 24 -37q-10 -6 -24 -5q-4 1 0 -1q12 -6 15 -4q3 1 8 5q0 1 2 1q3 -10 6 -24q0 -3 -4 -3q-5 2 -10 6q-1 1 -2 1q-3 2 -4 1t1 -4q12 -14 17 -44q0 -2 -1 -2q0 -1 -2 0q-12 9 -19 6q-4 0 0 -2 q7 -1 14 -5q2 -1 4 -3q1 -4 5 -4q1 1 4 2q2 1 4 1q2 2 2 3q0 2 -2 2q-3 1 -5 8q-8 21 -15 36q2 -1 4 -3q1 -1 4 -3q4 -4 14 2q3 2 1 4q-5 3 -7 10q-2 4 -3 9q-1 6 -2 9h1z"
+     id="path2"
+     style="fill:none;stroke:#ff0000;stroke-opacity:1" />
+    </clipPath>
+  <path
+      style="fill:none;stroke:#000000;;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="M 89.547036,20.645279 62.769497,71.543045 38.036044,105.47489 18.617218,125.30253 v 0"
+     id="path919" />
+  <path
+      style="fill:none;stroke:#000000;;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 75.851654,48.240453 -7.358714,82.376707 0.204409,52.12422 -4.292583,2.24849 11.651296,17.37474 10.220435,23.91582"
+     id="path921" />
+  <path
+      style="fill:none;stroke:#000000;;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 78.100149,88.100149 14.104201,-2.657313 6.68883,-2.399669 6.78563,-5.493128 6.78563,1.938751 -7.46382,18.796626 -9.91769,24.181334 -5.571732,7.80043 15.823732,-9.02621 9.13764,2.00582 -4.45739,5.90604 -6.46321,24.0699 -9.69482,21.28403 -14.597946,17.16094 -3.231606,3.45448"
+     id="path923" />
+  <path
+      style="fill:none;stroke:#000000;;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 73.24173,151.55121 15.712294,-5.01456 59.060396,33.76471 45.5768,24.73851 18.83247,2.45156 42.90236,-1.22578"
+     id="path925" />
+  <path
+      style="fill:none;stroke:#000000;;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 129.50011,39.73536 22.34048,-1.364304 9.2234,-0.70908 6.72083,-1.394888 23.96671,-6.97444 L 197,30 l 7.84694,13.158151 -9.60977,5.233891 -13.38503,16.473886 -18.01832,16.044879 -5.37028,3.501025"
+     id="path927" />
+  <path
+      style="fill:none;stroke:#000000;;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 114.96636,69.743346 18.865,0.343 18.62543,-4.676379 23.09186,-3.763871 11.41044,-1.24175 18.77072,-2.401941 25.26485,-3.736351 -21.26162,6.761017"
+     id="path929" />
+  <path
+      style="fill:none;stroke:#000000;;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 128.95668,93.408782 18.77072,-2.668823 5.69349,-1.601293 14.63811,-4.5405 8.78209,-4.673041 4.99532,0.563988 6.929,-0.241709"
+     id="path931" />
+  <path
+      style="fill:none;stroke:#000000;;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 147.35259,-7.4124108 10.15178,18.1281788 -0.8057,60.74954 -1.28911,81.375382 -2.90051,23.84862 10.6352,19.17559"
+     id="path933" />
+  <path
+      style="fill:none;stroke:#000000;;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 127.61302,113.84496 23.04293,-2.98108 19.82014,-5.96215 4.5119,-1.85311 17.56419,-0.72512"
+     id="path935" />
+  <path
+      style="fill:none;stroke:#000000;;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     d="m 111.25737,138.9827 25.29888,-3.7062 21.25654,-5.05618 29.12164,-3.85949 15.43797,-1.55382 24.51029,12.07971"
+     id="path937" />
+</svg>
+  </div>
+  <div>
+    Drag and Drop 展示區 (接收任何SVG)
+  </div>
+
+  <script type="text/javascript">
+    // Your beautiful D3 code will go here
+
+    var path1 = document.querySelector('#path919');
+    var path2 = document.querySelector('#path921');
+    var path3 = document.querySelector('#path923');
+   var path4 = document.querySelector('#path925');
+    var path5 = document.querySelector('#path927');
+  var path6 = document.querySelector('#path929');
+  var path7 = document.querySelector('#path931');
+  var path8 = document.querySelector('#path933');
+  var path9 = document.querySelector('#path935');
+  var path10 = document.querySelector('#path937');
+
+    var length1 = parseInt(path1.getTotalLength());
+    var length2 = parseInt(path2.getTotalLength());
+    var length3 = parseInt(path3.getTotalLength());
+    var length4 = parseInt(path4.getTotalLength());
+    var length5 = parseInt(path5.getTotalLength());
+    var length6 = parseInt(path6.getTotalLength());
+    var length7 = parseInt(path7.getTotalLength());
+    var length8 = parseInt(path8.getTotalLength());
+    var length9 = parseInt(path9.getTotalLength());
+    var length10 = parseInt(path10.getTotalLength());
+
+    //var length3 = parseInt(path3.getTotalLength());
+    //var length4 = parseInt(path4.getTotalLength());
+    //var length5 = parseInt(path5.getTotalLength());
+    //var length6 = parseInt(path6.getTotalLength());
+
+    //135, 119, 84, 229
+    console.log(length1 + ', ' + length2+ ', ' + length3+ ', ' + length4+ ', ' + length5+ ', ' + length6+ ', ' + length7+ ', ' + length8+ ', ' + length9+ ', ' + length10);
+
+      // var path1 = document.querySelector('#path1182');
+      // var path2 = document.querySelector('#path1652');
+      // var path3 = document.querySelector('#path1654');
+      // var path4 = document.querySelector('#path1656');
+
+      // var path5 = document.querySelector('#path1658');
+      // var path6 = document.querySelector('#path1660');
+      // var path7 = document.querySelector('#path1662');
+      // var path8 = document.querySelector('#path1664');
+
+      // var path9 = document.querySelector('#path1666');
+      // var path10 = document.querySelector('#path1668');
+      // var path11 = document.querySelector('#path1670');
+      // var path12 = document.querySelector('#path1672');
+
+      // var length1 = parseInt(path1.getTotalLength());
+      // var length2 = parseInt(path2.getTotalLength());
+      // var length3 = parseInt(path3.getTotalLength());
+      // var length4 = parseInt(path4.getTotalLength());
+
+      // var length5 = parseInt(path5.getTotalLength());
+      // var length6 = parseInt(path6.getTotalLength());
+      // var length7 = parseInt(path7.getTotalLength());
+      // var length8 = parseInt(path8.getTotalLength());
+
+      // var length9 = parseInt(path9.getTotalLength());
+      // var length10 = parseInt(path10.getTotalLength());
+      // var length11 = parseInt(path11.getTotalLength());
+      // var length12 = parseInt(path12.getTotalLength());
+
+      // // 88, 84, 134, 90
+      // // 136, 145, 225, 43
+      // // 70, 311, 68, 49
+      // console.log(length1 + ', ' + length2 + ', ' + length3+ ', ' + length4);
+      // console.log(length5 + ', ' + length6 + ', ' + length7+ ', ' + length8);
+      // console.log(length9 + ', ' + length10 + ', ' + length11+ ', ' + length12);
+  </script>
+
+</html>

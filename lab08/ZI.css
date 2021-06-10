@@ -1,0 +1,30 @@
+#path1052{
+    stroke-width: 20;
+    clip-path: url("#cp2");
+    stroke-dasharray: 402;
+    animation: dash2-1 5s linear forwards;
+}
+@keyframes dash2-1 {
+    0% {
+            stroke-dashoffset: 402;
+}
+    50% {
+            stroke-dashoffset: 0;
+    }
+}
+
+#path1090 {
+    stroke-width: 20;
+    clip-path: url("#cp2");
+    stroke-dasharray: 250;
+    animation: dash2-2 5s linear forwards;
+}
+@keyframes dash2-2 {
+    0%,
+    50% {
+            stroke-dashoffset: 250;
+}
+    100% {
+            stroke-dashoffset: 0;
+    }
+}
