@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700&display=swap');
+
+#training-section,
+#testing-section {
+    height: 100%;
+    overflow: hidden;
+}
+
+#train-vs-test {
+    height: 100%;
+    position: fixed;
+    max-width: 100%;
+}
+
+.hr {
+    background-color: #ff470f;
+    border: none;
+    content: '';
+    height: 1px;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    transform-origin: center left;
+    width: 10rem;
+}
+
+.hr.duan {
+    background-color: #8b0fff;
+    border: none;
+    content: '';
+    height: 1px;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+    transform-origin: center left;
+    width: 4rem;
+}

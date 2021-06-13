@@ -19,7 +19,7 @@ d3.select(window).on("load", function() {
             return t[1]
         }), n.filter(function(t) {
             return "img" == t[0]
-        }).append("img").style("width", "100%").style("height", "400px").style("object-fit", "contain").attr("src", function(t) {
+        }).append("img").style("width", "100%").style("height", "270px").style("object-fit", "contain").attr("src", function(t) {
             return "./media/" + t[1]
         }), n.filter(function(t) {
             return "h" == t[0]
@@ -33,13 +33,13 @@ d3.select(window).on("load", function() {
     }
     t.setDataFromJson("./dataset.json", function() {
         t.install(), t.play()
-    }), d3.text("./article/1.txt", function(t) {
+    }), d3.text("./article/training.txt", function(t) {
         n("#training-section", t.split("\n").filter(function(t) {
             return 0 != t.length
         }).map(function(t) {
             return t.split("/")
         }))
-    }), d3.text("./article/2.txt", function(t) {
+    }), d3.text("./article/testing.txt", function(t) {
         n("#testing-section", t.split("\n").filter(function(t) {
             return 0 != t.length
         }).map(function(t) {
