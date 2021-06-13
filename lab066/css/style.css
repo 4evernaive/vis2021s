@@ -12,8 +12,9 @@
     max-width: 100%;
 }
 
+
 .hr {
-    background-color: #ff470f;
+    background-color: #b00020;
     border: none;
     content: '';
     height: 1px;
@@ -24,7 +25,7 @@
 }
 
 .hr.duan {
-    background-color: #8b0fff;
+    background-color: rgba(160,102,211,1);
     border: none;
     content: '';
     height: 1px;
