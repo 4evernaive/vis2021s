@@ -23,7 +23,3 @@ t/二、因為原始資料的維度太多，我們選取了其中十個，分別
 h/訓練說明
 t/使用 Python 平台，以 sklearn 機器學習套件。
 t/以 DecisionTreeClassifier 進行決策樹的訓練生成樹的模型，並透過 train_test_split 對訓練以及測試資料集進行 7:3 的分割。
-
-
-
-
